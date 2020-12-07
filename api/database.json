@@ -1,6 +1,15 @@
 {
-    "magazines": [],
-    "stories": [],
-    "submittedStories": [],
-    "storyNotes": []
+  "magazines": [],
+  "stories": [],
+  "submittedStories": [],
+  "storyNotes": [],
+  "users": [
+    {
+      "email": "m@campopiano.com",
+      "password": "itsme",
+      "name": "Mario Campopiano",
+      "id": 1
+    }
+  ],
+  "userStories": []
 }
