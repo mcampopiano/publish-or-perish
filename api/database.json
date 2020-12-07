@@ -1,6 +1,23 @@
 {
   "magazines": [],
-  "stories": [],
+  "stories": [
+    {
+      "title": "New story",
+      "dailyWordGoal": 2000,
+      "totalWordGoal": 7000,
+      "userId": 1,
+      "complete": false,
+      "id": 1
+    },
+    {
+      "title": "Dragon Drop",
+      "dailyWordGoal": 1000,
+      "totalWordGoal": 7000,
+      "userId": 1,
+      "complete": false,
+      "id": 2
+    }
+  ],
   "submittedStories": [],
   "storyNotes": [],
   "users": [
@@ -10,6 +27,5 @@
       "name": "Mario Campopiano",
       "id": 1
     }
-  ],
-  "userStories": []
+  ]
 }
