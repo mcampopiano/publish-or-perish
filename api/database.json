@@ -16,6 +16,14 @@
       "userId": 1,
       "complete": false,
       "id": 2
+    },
+    {
+      "title": "The new phone",
+      "dailyWordGoal": 2000,
+      "totalWordGoal": 10000,
+      "userId": 1,
+      "complete": false,
+      "id": 3
     }
   ],
   "submittedStories": [],
