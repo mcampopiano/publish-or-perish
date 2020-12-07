@@ -11,8 +11,8 @@ export const StoryForm = (props) => {
     const constructNewStory = () => {
         addStory({
             title: title.current.value,
-            dailyWord: parseInt(dailyWord.current.value),
-            totalWord: parseInt(totalWord.current.value),
+            dailyWordGoal: parseInt(dailyWord.current.value),
+            totalWordGoal: parseInt(totalWord.current.value),
             userId: parseInt(localStorage.getItem("app_user_id")),
             complete: false
         })
