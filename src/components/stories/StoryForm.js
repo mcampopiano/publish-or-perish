@@ -17,13 +17,6 @@ export const StoryForm = (props) => {
             complete: false
         })
         .then(() => props.history.push("/"))
-        // console.log("my object: ", {
-        //     title: title.current.value,
-        //     dailyWord: dailyWord.current.value,
-        //     totalWord: totalWord.current.value,
-        //     userId: parseInt(localStorage.getItem("app_user_id")),
-        //     complete: false
-        // })
     }
 
     return (

@@ -8,6 +8,14 @@
       "userId": 1,
       "complete": false,
       "id": 1
+    },
+    {
+      "title": "Dragon Drop",
+      "dailyWord": 1000,
+      "totalWord": 7000,
+      "userId": 1,
+      "complete": false,
+      "id": 2
     }
   ],
   "submittedStories": [],
