@@ -1,5 +1,6 @@
 import React from "react"
 import {Redirect, Route} from "react-router-dom"
+import { ApplicationViews } from "./components/ApplicationViews"
 import { Login } from "./components/auth/Login"
 import { Register } from "./components/auth/Register"
 
@@ -11,7 +12,7 @@ export const POP = () => {
       if (localStorage.getItem("app_user_id")) {
           return (
               <>
-                  //Components that are rendered when the user is authenticated go inside this React fragment
+                  <ApplicationViews />
               </>
           )
       } else {

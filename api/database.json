@@ -1,6 +1,15 @@
 {
   "magazines": [],
-  "stories": [],
+  "stories": [
+    {
+      "title": "New story",
+      "dailyWord": 2000,
+      "totalWord": 7000,
+      "userId": 1,
+      "complete": false,
+      "id": 1
+    }
+  ],
   "submittedStories": [],
   "storyNotes": [],
   "users": [
@@ -10,6 +19,5 @@
       "name": "Mario Campopiano",
       "id": 1
     }
-  ],
-  "userStories": []
+  ]
 }
