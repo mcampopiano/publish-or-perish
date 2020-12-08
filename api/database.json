@@ -34,16 +34,41 @@
       "userId": 1,
       "complete": false,
       "id": 3
+    },
+    {
+      "title": "The Colorado Kid",
+      "dailyWordGoal": 1500,
+      "totalWordGoal": 15000,
+      "userId": 2,
+      "complete": false,
+      "id": 4
     }
   ],
   "submittedStories": [],
-  "storyNotes": [],
+  "notes": [
+    {
+      "storyId": 2,
+      "entry": "Drops of dragon blood could be used to gain magical abilities.",
+      "id": 1
+    },
+    {
+      "storyId": 4,
+      "entry": "This will be a story about my high school years",
+      "id": 2
+    }
+  ],
   "users": [
     {
       "email": "m@campopiano.com",
       "password": "itsme",
       "name": "Mario Campopiano",
       "id": 1
+    },
+    {
+      "email": "sariah@campopiano.com",
+      "password": "itsme",
+      "name": "Sariah Campopiano",
+      "id": 2
     }
   ]
 }

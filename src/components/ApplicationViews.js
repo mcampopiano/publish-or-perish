@@ -4,6 +4,8 @@ import { Dashboard } from "./Dashboard"
 import { MagazineDetail } from "./magazines/MagazineDetail"
 import { MagazineForm } from "./magazines/MagazineForm"
 import { MagazineProvider } from "./magazines/MagazineProvider"
+import { NoteForm } from "./notes/NoteForm"
+import { NoteProvider } from "./notes/NoteProvider"
 import { StoryForm } from "./stories/StoryForm"
 import { StoryProvider } from "./stories/StoryProvider"
 
@@ -18,12 +20,18 @@ export const ApplicationViews = (props) => {
                 </StoryProvider>
             </MagazineProvider>
 
-            <StoryProvider>
-                <Route path="/stories/create" render={
-                    props => <StoryForm {...props} />
+            <NoteProvider>
+                <StoryProvider>
+                    <Route path="/stories/create" render={
+                        props => <StoryForm {...props} />
 
-                } />
-            </StoryProvider>
+                    } />
+                    <Route exact path="/stories/notes/:storyId(\d+)" render={
+                        props => <NoteForm {...props} />
+
+                    } />
+                </StoryProvider>
+            </NoteProvider>
 
             <MagazineProvider>
                 <Route path="/magazines/create" render={
@@ -31,8 +39,8 @@ export const ApplicationViews = (props) => {
 
                 } />
                 <Route exact path="/magazines/:magazineId(\d+)" render={
-                            props => <MagazineDetail {...props} />
-                        } />
+                    props => <MagazineDetail {...props} />
+                } />
             </MagazineProvider>
         </>
     )
