@@ -13,7 +13,7 @@ export const MagazineList = (props) => {
         <div className="magazineList">
             <h2>Publication Magazines</h2>
             {
-                magazines.map(mag => <Link key={mag.id} to={`/magazine/${mag.id}`}>{mag.name}</Link>)
+                magazines.map(mag => <Link key={mag.id} to={{pathname:`/magazines/${mag.id}`, state: {chosenMagazine: mag}}}>{mag.name}</Link>)
             }
             <button onClick={() => props.history.push("/magazines/create")}>Add magazine</button>
         </div>

@@ -1,6 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { Dashboard } from "./Dashboard"
+import { MagazineDetail } from "./magazines/MagazineDetail"
 import { MagazineForm } from "./magazines/MagazineForm"
 import { MagazineProvider } from "./magazines/MagazineProvider"
 import { StoryForm } from "./stories/StoryForm"
@@ -29,6 +30,9 @@ export const ApplicationViews = (props) => {
                     props => <MagazineForm {...props} />
 
                 } />
+                <Route exact path="/magazines/:magazineId(\d+)" render={
+                            props => <MagazineDetail {...props} />
+                        } />
             </MagazineProvider>
         </>
     )
