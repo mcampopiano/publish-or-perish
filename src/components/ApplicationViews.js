@@ -8,6 +8,7 @@ import { NoteForm } from "./notes/NoteForm"
 import { NoteList } from "./notes/NoteList"
 import { NoteProvider } from "./notes/NoteProvider"
 import { StoryForm } from "./stories/StoryForm"
+import { CompletedStoryList } from "./stories/StoryList"
 import { StoryProvider } from "./stories/StoryProvider"
 
 export const ApplicationViews = (props) => {
@@ -48,6 +49,12 @@ export const ApplicationViews = (props) => {
                     props => <MagazineDetail {...props} />
                 } />
             </MagazineProvider>
+
+            <StoryProvider>
+                <Route path="/stories/complete" render={
+                    props => <CompletedStoryList {...props} />
+                } />
+            </StoryProvider>
         </>
     )
 }
