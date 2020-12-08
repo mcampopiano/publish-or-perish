@@ -33,8 +33,15 @@ export const StoryProvider = (props) => {
         .then(getStories)
     }
 
+    const deleteStory = story => {
+        return fetch(`http://localhost:8088/stories/${story.id}`, {
+            method: "DELETE"
+        })
+        .then(getStories)
+    }
+
     return (
-        <StoryContext.Provider value={{stories, setStories, getStories, addStory, editStory}}>
+        <StoryContext.Provider value={{stories, setStories, getStories, addStory, editStory, deleteStory}}>
             {props.children}
         </StoryContext.Provider>
     )
