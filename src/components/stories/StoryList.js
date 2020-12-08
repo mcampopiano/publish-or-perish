@@ -11,6 +11,7 @@ export const StoryList = (props) => {
 
     return (
         <div className="storyList">
+            <h2>Stories</h2>
             {
                 stories.map(story => <Story key={story.id} story={story} />)
             }

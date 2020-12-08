@@ -19,6 +19,7 @@ export const StoryProvider = (props) => {
             },
             body: JSON.stringify(story)
         })
+        .then(getStories)
     }
 
     return (

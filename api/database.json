@@ -1,5 +1,15 @@
 {
-  "magazines": [],
+  "magazines": [
+    {
+      "name": "The First Line",
+      "submissionDates": "Year round",
+      "wordCount": "300 - 5000 words",
+      "genre": "Open",
+      "responseTime": "2 - 6 months",
+      "website": "www.thefirstline.com",
+      "id": 1
+    }
+  ],
   "stories": [
     {
       "title": "New story",
@@ -16,6 +26,14 @@
       "userId": 1,
       "complete": false,
       "id": 2
+    },
+    {
+      "title": "The new phone",
+      "dailyWordGoal": 2000,
+      "totalWordGoal": 10000,
+      "userId": 1,
+      "complete": false,
+      "id": 3
     }
   ],
   "submittedStories": [],
