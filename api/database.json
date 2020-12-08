@@ -25,23 +25,23 @@
       "title": "Dragon Drop",
       "totalWordGoal": 7000,
       "dailyWordGoal": 1000,
-      "complete": true
+      "complete": false
     },
     {
-      "title": "The new phone",
-      "dailyWordGoal": 2000,
-      "totalWordGoal": 10000,
+      "id": 3,
       "userId": 1,
-      "complete": false,
-      "id": 3
+      "title": "The new phone",
+      "totalWordGoal": 10000,
+      "dailyWordGoal": 2000,
+      "complete": false
     },
     {
-      "title": "The Colorado Kid",
-      "dailyWordGoal": 1500,
-      "totalWordGoal": 15000,
+      "id": 4,
       "userId": 2,
-      "complete": false,
-      "id": 4
+      "title": "The Colorado Kid",
+      "totalWordGoal": 15000,
+      "dailyWordGoal": 1500,
+      "complete": false
     }
   ],
   "submittedStories": [],

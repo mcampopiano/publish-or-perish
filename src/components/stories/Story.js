@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { StoryContext } from "./StoryProvider"
 
 export const Story = ({ story, history }) => {
-    const {editStory} = useContext(StoryContext)
+    const {editStory, deleteStory} = useContext(StoryContext)
     const complete = useRef(null)
     const storyComplete = () => {
         editStory({
@@ -27,6 +27,7 @@ export const Story = ({ story, history }) => {
             <Link to={{pathname: `/stories/notes/${story.id}`, state: {chosenStory: story}}}>
                 <button>View notes</button>
             </Link>
+            <button onClick={() => deleteStory(story)}>Delete story</button>
         </div>
     )
 }
