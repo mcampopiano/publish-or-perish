@@ -12,20 +12,20 @@
   ],
   "stories": [
     {
-      "title": "New story",
-      "dailyWordGoal": 2000,
-      "totalWordGoal": 7000,
+      "id": 1,
       "userId": 1,
-      "complete": false,
-      "id": 1
+      "title": "New story",
+      "totalWordGoal": 7000,
+      "dailyWordGoal": 2000,
+      "complete": false
     },
     {
-      "title": "Dragon Drop",
-      "dailyWordGoal": 1000,
-      "totalWordGoal": 7000,
+      "id": 2,
       "userId": 1,
-      "complete": false,
-      "id": 2
+      "title": "Dragon Drop",
+      "totalWordGoal": 7000,
+      "dailyWordGoal": 1000,
+      "complete": false
     },
     {
       "title": "The new phone",

@@ -22,8 +22,19 @@ export const StoryProvider = (props) => {
         .then(getStories)
     }
 
+    const editStory = story => {
+        return fetch(`http://localhost:8088/stories/${story.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(story)
+        })
+        .then(getStories)
+    }
+
     return (
-        <StoryContext.Provider value={{stories, setStories, getStories, addStory}}>
+        <StoryContext.Provider value={{stories, setStories, getStories, addStory, editStory}}>
             {props.children}
         </StoryContext.Provider>
     )
