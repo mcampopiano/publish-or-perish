@@ -5,6 +5,7 @@ import { MagazineDetail } from "./magazines/MagazineDetail"
 import { MagazineForm } from "./magazines/MagazineForm"
 import { MagazineProvider } from "./magazines/MagazineProvider"
 import { NoteForm } from "./notes/NoteForm"
+import { NoteList } from "./notes/NoteList"
 import { NoteProvider } from "./notes/NoteProvider"
 import { StoryForm } from "./stories/StoryForm"
 import { StoryProvider } from "./stories/StoryProvider"
@@ -26,12 +27,17 @@ export const ApplicationViews = (props) => {
                         props => <StoryForm {...props} />
 
                     } />
-                    <Route exact path="/stories/notes/:storyId(\d+)" render={
+                    <Route exact path="/stories/notes/create/:storyId(\d+)" render={
                         props => <NoteForm {...props} />
+
+                    } />
+                    <Route exact path="/stories/notes/:storyId(\d+)" render={
+                        props => <NoteList {...props} />
 
                     } />
                 </StoryProvider>
             </NoteProvider>
+
 
             <MagazineProvider>
                 <Route path="/magazines/create" render={

@@ -55,6 +55,11 @@
       "storyId": 4,
       "entry": "This will be a story about my high school years",
       "id": 2
+    },
+    {
+      "storyId": 4,
+      "entry": "The prologue will be about brace face.",
+      "id": 3
     }
   ],
   "users": [
