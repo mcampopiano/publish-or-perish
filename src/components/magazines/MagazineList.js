@@ -11,6 +11,7 @@ export const MagazineList = (props) => {
 
     return (
         <div className="magazineList">
+            <h2>Publication Magazines</h2>
             {
                 magazines.map(mag => <Link key={mag.id} to={`/magazine/${mag.id}`}>{mag.name}</Link>)
             }
