@@ -18,7 +18,7 @@ export const NoteList = (props) => {
                     notes.map(note => {
                         if (note.storyId === parseInt(story.id)) {
                             return (
-                                <article className="noteEntry">
+                                <article className="noteEntry" key={note.id}>
                                     <p> {note.entry} </p>
                                 </article>
                             )
