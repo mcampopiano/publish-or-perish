@@ -22,8 +22,15 @@ export const MagazineProvider = (props) => {
         .then(getMagazines)
     }
 
+    const deleteMagazine = (magazine) => {
+        return fetch(`http://localhost:8088/magazines/${magazine.id}`, {
+            method: "DELETE"
+        })
+        .then(getMagazines)
+    }
+
     return (
-        <MagazineContext.Provider value={{magazines, setMagazines, getMagazines, addMagazine}}>
+        <MagazineContext.Provider value={{magazines, setMagazines, getMagazines, addMagazine, deleteMagazine}}>
             {props.children}
         </MagazineContext.Provider>
     )

@@ -7,7 +7,7 @@ export const MagazineDetail = (props) => {
         <header className="magDetailsTitle">
         <h2 className="magDetailsTitle">{props.location.state.chosenMagazine.name}</h2>
         </header>                
-                <Magazine mag={props.location.state.chosenMagazine} />
+                <Magazine mag={props.location.state.chosenMagazine} {...props}/>
                 <button onClick={() => props.history.push("/")}>Dashboard</button>
         </>
     )
