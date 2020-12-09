@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { CompletedStory } from "../stories/CompletedStory"
+import { StorySubmitted } from "../stories/Story"
 import { SubmittedStoriesContext } from "../submittedStories/SubmittedStoriesProvider"
 import { Magazine } from "./Magazine"
 
@@ -28,8 +29,8 @@ export const MagazineDetail = (props) => {
                 <h2>Pending Submissions</h2>
                 {
                     submittedStories.map(sub => {
-                        if (sub.magazineId === props.location.state.chosenMagazine.id) {
-                          return  <CompletedStory story={sub.story} {...props}/> 
+                        if (sub.magazineId === props.location.state.chosenMagazine.id && sub.isPending) {
+                          return  <StorySubmitted story={sub.story} sub={sub} mag={props.location.state.chosenMagazine} {...props}/> 
                         }
                     })
                 }
