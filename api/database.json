@@ -79,6 +79,11 @@
       "storyId": 4,
       "entry": "The prologue will be about brace face.",
       "id": 3
+    },
+    {
+      "storyId": 2,
+      "entry": "Dragons are big",
+      "id": 4
     }
   ],
   "users": [
