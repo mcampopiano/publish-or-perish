@@ -10,6 +10,8 @@ import { NoteProvider } from "./notes/NoteProvider"
 import { StoryForm } from "./stories/StoryForm"
 import { CompletedStoryList } from "./stories/StoryList"
 import { StoryProvider } from "./stories/StoryProvider"
+import { SubmissionForm } from "./submittedStories/SubmittedStoriesForm"
+import { SubmittedStoriesProvider } from "./submittedStories/SubmittedStoriesProvider"
 
 export const ApplicationViews = (props) => {
     return (
@@ -39,22 +41,33 @@ export const ApplicationViews = (props) => {
                 </StoryProvider>
             </NoteProvider>
 
+            <StoryProvider>
+                <SubmittedStoriesProvider>
+                    <MagazineProvider>
+                        <Route path="/magazines/create" render={
+                            props => <MagazineForm {...props} />
 
-            <MagazineProvider>
-                <Route path="/magazines/create" render={
-                    props => <MagazineForm {...props} />
-
-                } />
-                <Route exact path="/magazines/:magazineId(\d+)" render={
-                    props => <MagazineDetail {...props} />
-                } />
-            </MagazineProvider>
+                        } />
+                        <Route exact path="/magazines/:magazineId(\d+)" render={
+                            props => <MagazineDetail {...props} />
+                        } />
+                    </MagazineProvider>
+                </SubmittedStoriesProvider>
+            </StoryProvider>
 
             <StoryProvider>
                 <Route path="/stories/complete" render={
                     props => <CompletedStoryList {...props} />
                 } />
             </StoryProvider>
+
+            <SubmittedStoriesProvider>
+                <StoryProvider>
+                    <Route path="/magazines/submissions" render={
+                        props => <SubmissionForm {...props} />
+                    } />
+                </StoryProvider>
+            </SubmittedStoriesProvider>
         </>
     )
 }

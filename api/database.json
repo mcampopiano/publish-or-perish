@@ -25,7 +25,7 @@
       "title": "Dragon Drop",
       "totalWordGoal": 7000,
       "dailyWordGoal": 1000,
-      "complete": false
+      "complete": true
     },
     {
       "id": 3,
@@ -44,7 +44,26 @@
       "complete": false
     }
   ],
-  "submittedStories": [],
+  "submittedStories": [
+    {
+      "magazineId": 1,
+      "storyId": 2,
+      "dateSubmitted": "2020-12-08",
+      "expectedResponseDate": "2021-02-15",
+      "isPending": true,
+      "accepted": false,
+      "id": 1
+    },
+    {
+      "magazineId": 1,
+      "storyId": 3,
+      "dateSubmitted": "2020-12-08",
+      "expectedResponseDate": "2021-07-07",
+      "isPending": true,
+      "accepted": false,
+      "id": 2
+    }
+  ],
   "notes": [
     {
       "storyId": 2,
