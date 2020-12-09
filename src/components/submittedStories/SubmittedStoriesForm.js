@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
 import { StoryContext } from "../stories/StoryProvider"
 import { SubmittedStoriesContext } from "./SubmittedStoriesProvider"
 
 export const SubmissionForm = (props) => {
     const magazine = props.location.state.chosenMag
-    const {addSubmission} = useContext(SubmittedStoriesContext)
-    const {getStories, stories} = useContext(StoryContext)
+    const { addSubmission } = useContext(SubmittedStoriesContext)
+    const { getStories, stories } = useContext(StoryContext)
 
     const storyId = useRef(null)
     const dateSubmitted = useRef(null)
@@ -20,7 +21,7 @@ export const SubmissionForm = (props) => {
             isPending: true,
             accepted: false
         })
-        .then(props.history.push(`/magazines/${magazine.id}`))
+        // .then(props.history.push("/"))
     }
 
     useEffect(() => {
@@ -37,7 +38,7 @@ export const SubmissionForm = (props) => {
                         {
                             stories.map(story => {
                                 if (story.userId === parseInt(localStorage.getItem("app_user_id")) && story.complete) {
-                               return (<option key={story.id} value={story.id}>{story.title}</option>)
+                                    return (<option key={story.id} value={story.id}>{story.title}</option>)
                                 }
                             })
                         }
@@ -47,21 +48,23 @@ export const SubmissionForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="dateSubmitted">Select date submitted: </label>
-                    <input type="date" id="dateSubmitted" ref={dateSubmitted}/>
+                    <input type="date" id="dateSubmitted" ref={dateSubmitted} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="response">Select date of expected response: </label>
-                    <input type="date" id="response" ref={response}/>
+                    <input type="date" id="response" ref={response} />
                 </div>
             </fieldset>
-            <button type="submit" onClick={event => {
-                event.preventDefault()
-                constructSubmission()
-            }}>
-                Save submission
+            <Link to={{ pathname: `/magazines/${magazine.id}`, state: { chosenMagazine: magazine } }}>
+                <button  onClick={event => {
+                    // event.preventDefault()
+                    constructSubmission()
+                }}>
+                    Save submission
             </button>
+            </Link>
         </form>
     )
 }
