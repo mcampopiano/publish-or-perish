@@ -29,7 +29,7 @@ export const MagazineDetail = (props) => {
                 <h2>Pending Submissions</h2>
                 {
                     submittedStories.map(sub => {
-                        if (sub.magazineId === props.location.state.chosenMagazine.id) {
+                        if (sub.magazineId === props.location.state.chosenMagazine.id && sub.isPending) {
                           return  <StorySubmitted story={sub.story} sub={sub} mag={props.location.state.chosenMagazine} {...props}/> 
                         }
                     })
