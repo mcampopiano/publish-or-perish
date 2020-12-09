@@ -34,6 +34,35 @@ export const Story = ({ story, history }) => {
     )
 }
 
+
+export const CompletedStory = ({ story, history }) => {
+    const {editStory, deleteStory} = useContext(StoryContext)
+    const complete = useRef(null)
+    const storyComplete = () => {
+        editStory({
+            id: parseInt(story.id),
+            userId: parseInt(story.userId),
+            title: story.title,
+            totalWordGoal: story.totalWordGoal,
+            dailyWordGoal: story.dailyWordGoal,
+            complete: complete.current.checked
+        })
+    }
+
+    return (
+        <div className="story">
+            <h3>{story.title}</h3>
+            <label htmlFor="completeBox">Check to mark story incomplete</label>
+            <input type="checkbox" checked ref={complete} onChange={storyComplete}/>
+            <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
+            <Link to={{pathname: `/stories/notes/${story.id}`, state: {chosenStory: story}}}>
+                <button>View notes</button>
+            </Link>
+            <button onClick={() => deleteStory(story)}>Delete story</button>
+        </div>
+    )
+}
+
 export const StorySubmitted = ({ story, history, mag, sub }) => {
     const { deleteStory} = useContext(StoryContext)
     const {editSubmission} = useContext(SubmittedStoriesContext)
@@ -77,6 +106,28 @@ export const StorySubmitted = ({ story, history, mag, sub }) => {
                 <option value="true">Accepted</option>
                 <option value="false">Rejected</option>
             </select>
+            <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
+            <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
+                <button>View notes</button>
+            </Link>
+            <button onClick={() => {
+                deleteStory(story)
+                history.push(`/magazines/${mag.id}`)
+            }}>Delete Story</button>
+
+        </div>
+    )
+}
+
+
+export const StoryAcceptedRejected = ({ story, history, mag }) => {
+    const { deleteStory} = useContext(StoryContext)
+
+    return (
+        <div className="story">
+            <h3>{story.title}</h3>
+            <p>Total word count goal: {story.totalWordGoal}</p>
+            <p>Daily word count goal: {story.dailyWordGoal}</p>
             <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
             <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
                 <button>View notes</button>

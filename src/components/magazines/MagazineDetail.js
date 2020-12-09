@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { CompletedStory } from "../stories/CompletedStory"
-import { StorySubmitted } from "../stories/Story"
+import { StorySubmitted, StoryAcceptedRejected } from "../stories/Story"
 import { SubmittedStoriesContext } from "../submittedStories/SubmittedStoriesProvider"
 import { Magazine } from "./Magazine"
 
@@ -31,6 +30,26 @@ export const MagazineDetail = (props) => {
                     submittedStories.map(sub => {
                         if (sub.magazineId === props.location.state.chosenMagazine.id && sub.isPending) {
                           return  <StorySubmitted story={sub.story} sub={sub} mag={props.location.state.chosenMagazine} {...props}/> 
+                        }
+                    })
+                }
+            </article>
+            <article className="acceptedSubmissions">
+                <h2>Accepted Submissions</h2>
+                {
+                    submittedStories.map(sub => {
+                        if (sub.magazineId === props.location.state.chosenMagazine.id && !sub.isPending && sub.accepted) {
+                          return  <StoryAcceptedRejected story={sub.story} mag={props.location.state.chosenMagazine} {...props}/> 
+                        }
+                    })
+                }
+            </article>
+            <article className="rejectedSubmissions">
+                <h2>Rejected Submissions</h2>
+                {
+                    submittedStories.map(sub => {
+                        if (sub.magazineId === props.location.state.chosenMagazine.id && !sub.isPending && !sub.accepted) {
+                          return  <StoryAcceptedRejected story={sub.story} mag={props.location.state.chosenMagazine} {...props}/> 
                         }
                     })
                 }
