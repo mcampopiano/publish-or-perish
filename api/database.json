@@ -42,6 +42,22 @@
       "totalWordGoal": 15000,
       "dailyWordGoal": 1500,
       "complete": false
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "title": "Testing accepted",
+      "totalWordGoal": null,
+      "dailyWordGoal": null,
+      "complete": true
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "title": "Testing Rejected",
+      "totalWordGoal": null,
+      "dailyWordGoal": null,
+      "complete": true
     }
   ],
   "submittedStories": [
@@ -62,6 +78,24 @@
       "isPending": true,
       "accepted": false,
       "id": 2
+    },
+    {
+      "id": 3,
+      "magazineId": 1,
+      "storyId": 5,
+      "dateSubmitted": "",
+      "expectedResponseDate": "",
+      "isPending": false,
+      "accepted": true
+    },
+    {
+      "id": 4,
+      "magazineId": 1,
+      "storyId": 6,
+      "dateSubmitted": "",
+      "expectedResponseDate": "",
+      "isPending": false,
+      "accepted": false
     }
   ],
   "notes": [

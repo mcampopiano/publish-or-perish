@@ -22,7 +22,18 @@ export const SubmittedStoriesProvider = (props) => {
         .then(getSubmittedStories)
     }
 
-    return <SubmittedStoriesContext.Provider value={{submittedStories, getSubmittedStories, addSubmission}}>
+    const editSubmission = submission => {
+        return fetch(`http://localhost:8088/submittedStories/${submission.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(submission)
+        })
+        .then(getSubmittedStories)
+    }
+
+    return <SubmittedStoriesContext.Provider value={{submittedStories, getSubmittedStories, addSubmission, editSubmission}}>
         {props.children}
     </SubmittedStoriesContext.Provider>
 }
