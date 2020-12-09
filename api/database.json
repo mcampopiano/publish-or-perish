@@ -8,6 +8,15 @@
       "responseTime": "2 - 6 months",
       "website": "www.thefirstline.com",
       "id": 1
+    },
+    {
+      "name": "Cincinnati Review",
+      "submissionDates": "Oct 1 - Mar 1",
+      "wordCount": "7000 - 5000 words",
+      "genre": "Contemporary",
+      "responseTime": "6 - 12 month",
+      "website": "cin.com",
+      "id": 2
     }
   ],
   "stories": [
@@ -41,7 +50,7 @@
       "title": "The Colorado Kid",
       "totalWordGoal": 15000,
       "dailyWordGoal": 1500,
-      "complete": false
+      "complete": true
     },
     {
       "id": 5,
@@ -58,6 +67,14 @@
       "totalWordGoal": null,
       "dailyWordGoal": null,
       "complete": true
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "title": "Silver Surfers",
+      "totalWordGoal": 250,
+      "dailyWordGoal": 20,
+      "complete": true
     }
   ],
   "submittedStories": [
@@ -71,13 +88,13 @@
       "id": 1
     },
     {
+      "id": 2,
       "magazineId": 1,
       "storyId": 3,
       "dateSubmitted": "2020-12-08",
       "expectedResponseDate": "2021-07-07",
-      "isPending": true,
-      "accepted": false,
-      "id": 2
+      "isPending": false,
+      "accepted": false
     },
     {
       "id": 3,
@@ -96,6 +113,24 @@
       "expectedResponseDate": "",
       "isPending": false,
       "accepted": false
+    },
+    {
+      "id": 5,
+      "magazineId": 1,
+      "storyId": 7,
+      "dateSubmitted": "2020-12-09",
+      "expectedResponseDate": "2020-12-10",
+      "isPending": false,
+      "accepted": true
+    },
+    {
+      "id": 6,
+      "magazineId": 2,
+      "storyId": 4,
+      "dateSubmitted": "2020-12-09",
+      "expectedResponseDate": "2020-12-10",
+      "isPending": false,
+      "accepted": true
     }
   ],
   "notes": [
@@ -118,6 +153,11 @@
       "storyId": 2,
       "entry": "Dragons are big",
       "id": 4
+    },
+    {
+      "storyId": 7,
+      "entry": "This has nothing to do with fantastic four",
+      "id": 5
     }
   ],
   "users": [
