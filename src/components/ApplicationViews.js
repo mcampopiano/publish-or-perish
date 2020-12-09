@@ -10,6 +10,8 @@ import { NoteProvider } from "./notes/NoteProvider"
 import { StoryForm } from "./stories/StoryForm"
 import { CompletedStoryList } from "./stories/StoryList"
 import { StoryProvider } from "./stories/StoryProvider"
+import { SubmissionForm } from "./submittedStories/SubmittedStoriesForm"
+import { SubmittedStoriesProvider } from "./submittedStories/SubmittedStoriesProvider"
 
 export const ApplicationViews = (props) => {
     return (
@@ -55,6 +57,14 @@ export const ApplicationViews = (props) => {
                     props => <CompletedStoryList {...props} />
                 } />
             </StoryProvider>
+
+            <SubmittedStoriesProvider>
+                <StoryProvider>
+                    <Route path="/magazines/submissions" render={
+                        props => <SubmissionForm {...props} />
+                    } />
+                </StoryProvider>
+            </SubmittedStoriesProvider>
         </>
     )
 }

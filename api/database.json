@@ -25,7 +25,7 @@
       "title": "Dragon Drop",
       "totalWordGoal": 7000,
       "dailyWordGoal": 1000,
-      "complete": false
+      "complete": true
     },
     {
       "id": 3,
@@ -33,7 +33,7 @@
       "title": "The new phone",
       "totalWordGoal": 10000,
       "dailyWordGoal": 2000,
-      "complete": false
+      "complete": true
     },
     {
       "id": 4,
