@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { Story } from "./Story"
 import { StoryContext } from "./StoryProvider"
-import {CompletedStory} from "./CompletedStory"
+import {CompletedStory} from "./Story"
 
 export const StoryList = (props) => {
     const {stories, getStories} = useContext(StoryContext)
