@@ -41,16 +41,19 @@ export const ApplicationViews = (props) => {
                 </StoryProvider>
             </NoteProvider>
 
+            <StoryProvider>
+                <SubmittedStoriesProvider>
+                    <MagazineProvider>
+                        <Route path="/magazines/create" render={
+                            props => <MagazineForm {...props} />
 
-            <MagazineProvider>
-                <Route path="/magazines/create" render={
-                    props => <MagazineForm {...props} />
-
-                } />
-                <Route exact path="/magazines/:magazineId(\d+)" render={
-                    props => <MagazineDetail {...props} />
-                } />
-            </MagazineProvider>
+                        } />
+                        <Route exact path="/magazines/:magazineId(\d+)" render={
+                            props => <MagazineDetail {...props} />
+                        } />
+                    </MagazineProvider>
+                </SubmittedStoriesProvider>
+            </StoryProvider>
 
             <StoryProvider>
                 <Route path="/stories/complete" render={
