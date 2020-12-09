@@ -6,7 +6,7 @@ export const SubmittedStoriesProvider = (props) => {
     const [submittedStories, setSubmittedStories] = useState([])
 
     const getSubmittedStories = () => {
-        return fetch("http://localhost:8088/submittedStories")
+        return fetch("http://localhost:8088/submittedStories?_expand=story&_expand=magazine")
         .then(r => r.json())
         .then(setSubmittedStories)
     }
