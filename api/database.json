@@ -26,7 +26,7 @@
       "title": "New story",
       "totalWordGoal": 7000,
       "dailyWordGoal": 2000,
-      "complete": false
+      "complete": true
     },
     {
       "id": 2,
@@ -34,14 +34,6 @@
       "title": "Dragon Drop",
       "totalWordGoal": 7000,
       "dailyWordGoal": 1000,
-      "complete": true
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "title": "The new phone",
-      "totalWordGoal": 10000,
-      "dailyWordGoal": 2000,
       "complete": false
     },
     {
@@ -59,24 +51,31 @@
       "totalWordGoal": 250,
       "dailyWordGoal": 20,
       "complete": true
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "title": "Jisie's Cult",
+      "totalWordGoal": 15000,
+      "dailyWordGoal": 1500,
+      "complete": true
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "title": "Pop",
+      "totalWordGoal": 20000,
+      "dailyWordGoal": 2000,
+      "complete": true
     }
   ],
   "submittedStories": [
     {
+      "id": 1,
       "magazineId": 1,
       "storyId": 2,
       "dateSubmitted": "2020-12-08",
       "expectedResponseDate": "2021-02-15",
-      "isPending": true,
-      "accepted": false,
-      "id": 1
-    },
-    {
-      "id": 2,
-      "magazineId": 1,
-      "storyId": 3,
-      "dateSubmitted": "2020-12-08",
-      "expectedResponseDate": "2021-07-07",
       "isPending": false,
       "accepted": false
     },
@@ -97,6 +96,33 @@
       "expectedResponseDate": "2020-12-10",
       "isPending": false,
       "accepted": true
+    },
+    {
+      "id": 7,
+      "magazineId": 1,
+      "storyId": 8,
+      "dateSubmitted": "2020-12-09",
+      "expectedResponseDate": "2021-02-17",
+      "isPending": false,
+      "accepted": true
+    },
+    {
+      "id": 8,
+      "magazineId": 2,
+      "storyId": 9,
+      "dateSubmitted": "2020-12-10",
+      "expectedResponseDate": "2020-12-11",
+      "isPending": false,
+      "accepted": true
+    },
+    {
+      "magazineId": 1,
+      "storyId": 1,
+      "dateSubmitted": "2020-12-10",
+      "expectedResponseDate": "2020-12-11",
+      "isPending": true,
+      "accepted": false,
+      "id": 9
     }
   ],
   "notes": [
@@ -124,6 +150,16 @@
       "storyId": 7,
       "entry": "This has nothing to do with fantastic four",
       "id": 5
+    },
+    {
+      "storyId": 8,
+      "entry": "Story about my cohort",
+      "id": 6
+    },
+    {
+      "storyId": 8,
+      "entry": "second note",
+      "id": 7
     }
   ],
   "users": [
@@ -138,6 +174,12 @@
       "password": "itsme",
       "name": "Sariah Campopiano",
       "id": 2
+    },
+    {
+      "email": "Irene@campopiano.com",
+      "password": "itsme",
+      "name": "Irene Campopiano",
+      "id": 3
     }
   ]
 }
