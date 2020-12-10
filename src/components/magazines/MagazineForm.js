@@ -4,6 +4,7 @@ import { MagazineContext } from "./MagazineProvider"
 export const MagazineForm = (props) => {
     const {addMagazine} = useContext(MagazineContext)
 
+    // useRef is a react hook which returns an object with a .current property which is initially set to the argument passed to the function. The object is mutable, so it is a good way to capture user input.
     const name = useRef(null)
     const submissions = useRef(null)
     const words = useRef(null)
@@ -12,6 +13,7 @@ export const MagazineForm = (props) => {
     const website = useRef(null)
 
     const constructMagazine = () => {
+        // Uses the value of the .current property of the variables storing the objects returned from the useRef hooks.
         addMagazine({
             name: name.current.value,
             submissionDates: submissions.current.value,
@@ -29,6 +31,7 @@ export const MagazineForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="magTitle">Title of publication: </label>
+                    {/* The ref attribute here referres to the variable storing the useRef returned data, and will mutate the value of the .current property to the value of the input. */}
                     <input type="text" id="magTitle" ref={name} className="form-control" />
                 </div>
             </fieldset>
