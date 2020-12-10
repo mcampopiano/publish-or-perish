@@ -1,0 +1,13 @@
+.magazineList {
+    display: flex;
+    align-items: space;
+    flex-direction: column;
+}
+
+.magLink {
+    margin: 3px;
+}
+
+#magListBtn {
+    margin: 3px;
+}
