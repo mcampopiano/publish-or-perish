@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { MagazineContext } from "./MagazineProvider"
 
+// Since this component is being called by other components within <>, the arguments were passed down as objects, so I am using object deconstruction here.
 export const Magazine = ({ mag, history }) => {
     const { deleteMagazine } = useContext(MagazineContext)
     return (
