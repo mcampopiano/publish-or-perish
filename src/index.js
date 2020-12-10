@@ -8,6 +8,7 @@ import { POP } from './App';
 ReactDOM.render(
 
   <React.StrictMode>
+    {/* Install router from react-router-dom, then wrap everything in the Router tag so that all components have acces to it, along with having access to all of the route props (match, location, history). */}
     <Router>
       <POP />
     </Router>
