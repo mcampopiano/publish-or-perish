@@ -31,7 +31,7 @@ export const MagazineDetail = (props) => {
                 {
                     submittedStories.map(sub => {
                         if (sub.magazineId === props.location.state.chosenMagazine.id && sub.isPending && parseInt(localStorage.getItem("app_user_id")) ===sub.story.userId) {
-                          return  <StorySubmitted story={sub.story} sub={sub} mag={props.location.state.chosenMagazine} {...props}/> 
+                          return  <StorySubmitted story={sub.story} key={sub.id} sub={sub} mag={props.location.state.chosenMagazine} {...props}/> 
                         }
                     })
                 }
@@ -41,7 +41,7 @@ export const MagazineDetail = (props) => {
                 {
                     submittedStories.map(sub => {
                         if (sub.magazineId === props.location.state.chosenMagazine.id && !sub.isPending && sub.accepted && parseInt(localStorage.getItem("app_user_id")) ===sub.story.userId) {
-                          return  <StoryAcceptedRejected story={sub.story} mag={props.location.state.chosenMagazine} {...props}/> 
+                          return  <StoryAcceptedRejected story={sub.story} key={sub.id} mag={props.location.state.chosenMagazine} {...props}/> 
                         }
                     })
                 }
@@ -51,7 +51,7 @@ export const MagazineDetail = (props) => {
                 {
                     submittedStories.map(sub => {
                         if (sub.magazineId === props.location.state.chosenMagazine.id && !sub.isPending && !sub.accepted && parseInt(localStorage.getItem("app_user_id")) === sub.story.userId) {
-                          return  <StoryAcceptedRejected story={sub.story} mag={props.location.state.chosenMagazine} {...props}/> 
+                          return  <StoryAcceptedRejected story={sub.story} key={sub.id} mag={props.location.state.chosenMagazine} {...props}/> 
                         }
                     })
                 }
