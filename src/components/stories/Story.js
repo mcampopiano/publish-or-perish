@@ -110,10 +110,6 @@ export const StorySubmitted = ({ story, history, mag, sub }) => {
             <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
                 <button>View notes</button>
             </Link>
-            <button onClick={() => {
-                deleteStory(story)
-                history.push(`/magazines/${mag.id}`)
-            }}>Delete Story</button>
 
         </div>
     )
@@ -132,10 +128,6 @@ export const StoryAcceptedRejected = ({ story, history, mag }) => {
             <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
                 <button>View notes</button>
             </Link>
-            <button onClick={() => {
-                deleteStory(story)
-                history.push(`/magazines/${mag.id}`)
-            }}>Delete Story</button>
 
         </div>
     )

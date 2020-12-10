@@ -53,22 +53,6 @@
       "complete": true
     },
     {
-      "id": 5,
-      "userId": 1,
-      "title": "Testing accepted",
-      "totalWordGoal": null,
-      "dailyWordGoal": null,
-      "complete": true
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "title": "Testing Rejected",
-      "totalWordGoal": null,
-      "dailyWordGoal": null,
-      "complete": true
-    },
-    {
       "id": 7,
       "userId": 1,
       "title": "Silver Surfers",
@@ -93,24 +77,6 @@
       "storyId": 3,
       "dateSubmitted": "2020-12-08",
       "expectedResponseDate": "2021-07-07",
-      "isPending": false,
-      "accepted": false
-    },
-    {
-      "id": 3,
-      "magazineId": 1,
-      "storyId": 5,
-      "dateSubmitted": "",
-      "expectedResponseDate": "",
-      "isPending": false,
-      "accepted": true
-    },
-    {
-      "id": 4,
-      "magazineId": 1,
-      "storyId": 6,
-      "dateSubmitted": "",
-      "expectedResponseDate": "",
       "isPending": false,
       "accepted": false
     },
