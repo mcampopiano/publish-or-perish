@@ -35,7 +35,7 @@
     justify-content: space-between;
 }
 
-.storyForm {
+.storyForm, .noteForm, .magazineForm, .submissionForm {
     position: absolute;
     width: 250px;
     opacity: 75%;
@@ -49,11 +49,11 @@ fieldset {
     border: 0
 }
 
-.storyFormHeader {
+.storyFormHeader, .magFormHeader {
     text-align: center;
 }
 
-.storyFormButtons {
+.formButtons {
     display: flex;
     justify-content: center;
 }

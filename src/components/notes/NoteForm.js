@@ -22,20 +22,22 @@ export const NoteForm = (props) => {
                     <textarea id="noteEntry" ref={entry}></textarea>
                 </div>
             </fieldset>
-            <button type="submit" className="btn btn-primary" onClick={event => {
-                event.preventDefault()
-                constructNote()
-            }
-            }>
-                Save note
+            <section className="formButtons">
+                <button type="submit" className="btn btn-primary" onClick={event => {
+                    event.preventDefault()
+                    constructNote()
+                }
+                }>
+                    Save note
                 </button>
-            <button type="submit" className="btn btn-primary" onClick={event => {
-                event.preventDefault()
-                props.history.push("/")
-            }
-            }>
-                Dashboard
+                <button type="submit" className="btn btn-primary" onClick={event => {
+                    event.preventDefault()
+                    props.history.push("/")
+                }
+                }>
+                    Dashboard
                 </button>
+            </section>
         </form>
     )
 }

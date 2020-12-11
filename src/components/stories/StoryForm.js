@@ -41,7 +41,7 @@ export const StoryForm = (props) => {
                     <input type="text" id="dailyWordCount" ref={dailyWord} />
                 </div>
             </fieldset>
-            <section className="storyFormButtons">
+            <section className="formButtons">
                 <div className="formBtn">
                     <button type="submit"
                         onClick={event => {
