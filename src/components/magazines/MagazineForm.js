@@ -2,7 +2,7 @@ import React, { useContext, useRef } from "react"
 import { MagazineContext } from "./MagazineProvider"
 
 export const MagazineForm = (props) => {
-    const {addMagazine} = useContext(MagazineContext)
+    const { addMagazine } = useContext(MagazineContext)
 
     // useRef is a react hook which returns an object with a .current property which is initially set to the argument passed to the function. The object is mutable, so it is a good way to capture user input.
     const name = useRef(null)
@@ -22,12 +22,12 @@ export const MagazineForm = (props) => {
             responseTime: response.current.value,
             website: website.current.value
         })
-        .then(() => props.history.push("/"))
+            .then(() => props.history.push("/"))
     }
 
     return (
         <form className="magazineForm">
-            <h2>New Publishing Magazine</h2>
+            <h2 className="magFormHeader">New Publishing Magazine</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="magTitle">Title of publication: </label>
@@ -38,39 +38,51 @@ export const MagazineForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="submissionDates">Open submission dates: </label>
-                    <input type="text" id="submissionDates" ref={submissions} className="form-control" placeholder="e.g. Mar 1 - Sep 1"/>
+                    <input type="text" id="submissionDates" ref={submissions} className="form-control" placeholder="e.g. Mar 1 - Sep 1" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="responseTime">Typical response time: </label>
-                    <input type="text" id="responseTime" ref={response} className="form-control" placeholder="e.g. 6 - 12 months"/>
+                    <input type="text" id="responseTime" ref={response} className="form-control" placeholder="e.g. 6 - 12 months" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="wordCount">Word count requirements: </label>
-                    <input type="text" id="wordCount" ref={words} className="form-control" placeholder="e.g. 300 - 5,000 words"/>
+                    <input type="text" id="wordCount" ref={words} className="form-control" placeholder="e.g. 300 - 5,000 words" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="genre">Preferred genre: </label>
-                    <input type="text" id="genre" ref={genre} className="form-control" placeholder="e.g. sci-fi/fantasy"/>
+                    <input type="text" id="genre" ref={genre} className="form-control" placeholder="e.g. sci-fi/fantasy" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="website">Publication website: </label>
-                    <input type="text" id="website" ref={website} className="form-control"/>
+                    <input type="text" id="website" ref={website} className="form-control" />
                 </div>
             </fieldset>
-            <button type="submit"
-            onClick={event => {
-                event.preventDefault()
-                constructMagazine()
-            }}
-            className="btn btn-primary">Save Magazine</button>
+            <section className="formButtons">
+                <div className="formBtn">
+                    <button type="submit"
+                        onClick={event => {
+                            event.preventDefault()
+                            constructMagazine()
+                        }}
+                        className="btn btn-primary">Save Magazine</button>
+                </div>
+                <div className="formBtn">
+                    <button type="submit"
+                        onClick={event => {
+                            event.preventDefault()
+                            props.history.push("/")
+                        }}
+                        className="btn btn-primary">Dashboard</button>
+                </div>
+            </section>
         </form>
     )
 }

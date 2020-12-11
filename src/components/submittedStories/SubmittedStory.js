@@ -37,7 +37,7 @@ export const StorySubmitted = ({ story, history, sub }) => {
 
         return (
             <div className="story">
-                <h3>{story.title}</h3>
+                <h3 className="storyCardTitle">{story.title}</h3>
                 <p>Total word count goal: {story.totalWordGoal}</p>
                 <p>Daily word count goal: {story.dailyWordGoal}</p>
                 <select defaultValue="" ref={accepted} onChange={storyResponse}>
@@ -56,7 +56,7 @@ export const StorySubmitted = ({ story, history, sub }) => {
 
         return (
             <div className="story">
-                <h3>{story.title}</h3>
+                <h3 className="storyCardTitle">{story.title}</h3>
                 <p>Total word count goal: {story.totalWordGoal}</p>
                 <p>Daily word count goal: {story.dailyWordGoal}</p>
                 <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>

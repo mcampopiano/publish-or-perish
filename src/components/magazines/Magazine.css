@@ -1,7 +1,22 @@
+.magazineSection {
+    border: 5px solid;
+    height: 500px;
+    width: 500px;
+}
+
+.magazineHeader {
+    border: .5em solid;
+    text-align: center;
+    margin: 0;
+}
+
 .magazineList {
-    display: flex;
     align-items: space;
+    display: flex;
     flex-direction: column;
+    height: 417px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .magLink {

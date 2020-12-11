@@ -54,9 +54,12 @@ export const SubmissionForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="response">Select date of expected response: </label>
+                    <div></div>
                     <input type="date" id="response" ref={response} />
                 </div>
             </fieldset>
+            <section className="formButtons">
+                <div className="formBtn">
             <Link to={{ pathname: `/magazines/${magazine.id}`, state: { chosenMagazine: magazine } }}>
                 <button  onClick={event => {
                     // event.preventDefault()
@@ -65,6 +68,16 @@ export const SubmissionForm = (props) => {
                     Save submission
             </button>
             </Link>
+            </div>
+            <div className="formBtn">
+                    <button type="submit"
+                        onClick={event => {
+                            event.preventDefault()
+                            props.history.push("/")
+                        }}
+                        className="btn btn-primary">Dashboard</button>
+                </div>
+            </section>
         </form>
     )
 }

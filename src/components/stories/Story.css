@@ -1,0 +1,62 @@
+.storyList {
+    border: 5px solid;
+    height: 500px;
+    width: 500px;
+}
+
+.storyListHeader {
+    border: .5em solid;
+    text-align: center;
+    margin: 0;
+}
+
+.storyCardDisplay {
+    height: 420px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.story {
+    margin: 2px;
+    flex: 25%
+}
+
+.storyButtons {
+    display: flex;
+}
+
+.completedStoryHeader {
+    text-align: center;
+}
+
+.completedStoryDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.storyForm, .noteForm, .magazineForm, .submissionForm {
+    position: absolute;
+    width: 250px;
+    opacity: 75%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,05);
+    border-radius: 5px;
+    top: 20%;
+    left: 40%
+}
+
+fieldset {
+    border: 0
+}
+
+.storyFormHeader, .magFormHeader {
+    text-align: center;
+}
+
+.formButtons {
+    display: flex;
+    justify-content: center;
+}
+.formBtn {
+    margin: 5%
+}
