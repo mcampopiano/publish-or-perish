@@ -25,7 +25,7 @@ export const Story = ({ story, history }) => {
                 <input type="checkbox" ref={complete} onChange={storyComplete} />
                 <p>Total word count goal: {story.totalWordGoal}</p>
                 <p>Daily word count goal: {story.dailyWordGoal}</p>
-                <section className="buttons">
+                <section className="storyButtons">
                     <div className="btnDiv">
                         <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
                     </div>

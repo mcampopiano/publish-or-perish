@@ -14,7 +14,7 @@ export const MagazineList = (props) => {
 
     return (
         <div className="magazineSection">
-            <h2>Publication Magazines</h2>
+            <h2 className="magazineHeader">Publication Magazines</h2>
             <div className="magazineList">
                 {
                     // With this Link tag, from react-router-dom, I can pass an object as the value of the state property, which is itself property of the location property react router dom provides. This allows me to pass that data on so that I have access to it after following the Link. The Link elment itself in this case is making the name of each magazine in the magazines array a clickable link, which will then change the url to the specified pathname. In the applicationview component I am specifying what will be rendered to the DOM when this particular url is active.

@@ -38,15 +38,18 @@ export const CompletedStoryList = (props) => {
 
     return (
         <div className="completedStoryList">
-            <h2>Completed Stories</h2>
-            {
-                stories.map(story => {
-                    if (story.userId === parseInt(localStorage.getItem("app_user_id")) && story.complete) {
+            <h2 className="completedStoryHeader">Completed Stories</h2>
+            <section className="completedStoryDisplay">
 
-                        return <Story key={story.id} story={story} {...props} />
-                    }
-                })
-            }
+                {
+                    stories.map(story => {
+                        if (story.userId === parseInt(localStorage.getItem("app_user_id")) && story.complete) {
+
+                            return <Story key={story.id} story={story} {...props} />
+                        }
+                    })
+                }
+            </section>
             <button onClick={() => props.history.push("/")}>Dashboard</button>
         </div>
     )

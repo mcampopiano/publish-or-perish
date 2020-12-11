@@ -15,3 +15,48 @@
     overflow: scroll;
     overflow-x: hidden;
 }
+
+.story {
+    margin: 2px;
+    flex: 25%
+}
+
+.storyButtons {
+    display: flex;
+}
+
+.completedStoryHeader {
+    text-align: center;
+}
+
+.completedStoryDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.storyForm {
+    position: absolute;
+    width: 250px;
+    opacity: 75%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,05);
+    border-radius: 5px;
+    top: 20%;
+    left: 40%
+}
+
+fieldset {
+    border: 0
+}
+
+.storyFormHeader {
+    text-align: center;
+}
+
+.storyFormButtons {
+    display: flex;
+    justify-content: center;
+}
+.formBtn {
+    margin: 5%
+}

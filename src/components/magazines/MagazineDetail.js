@@ -21,7 +21,6 @@ export const MagazineDetail = (props) => {
                 <article className="magazineDetails">
                     {/* Since Magazine is a user-defined component functioning similarly to a DOM element in this case, I can pass information, in this case mag, which will be passed as an argument to the Magazine function. */}
                     <Magazine mag={magazine} {...props} />
-                    <button onClick={() => props.history.push("/")}>Dashboard</button>
                     {/* In the below case, I am using Link instead of the onClick function because I need to pass certain information in the location.state property. */}
                     <Link to={{ pathname: "/magazines/submissions", state: { chosenMag: magazine } }}>
                         <button>Add submission</button>
@@ -60,6 +59,7 @@ export const MagazineDetail = (props) => {
                     }
                 </article>
             </section>
+            <button onClick={() => props.history.push("/")}>Dashboard</button>
         </>
     )
 }

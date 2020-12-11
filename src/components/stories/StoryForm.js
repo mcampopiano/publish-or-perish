@@ -2,7 +2,7 @@ import React, { useContext, useRef } from "react"
 import { StoryContext } from "./StoryProvider"
 
 export const StoryForm = (props) => {
-    const {addStory} = useContext(StoryContext)
+    const { addStory } = useContext(StoryContext)
 
     const title = useRef(null)
     const dailyWord = useRef(null)
@@ -16,15 +16,17 @@ export const StoryForm = (props) => {
             userId: parseInt(localStorage.getItem("app_user_id")),
             complete: false
         })
-        .then(() => props.history.push("/"))
+            .then(() => props.history.push("/"))
     }
 
     return (
         <form className="storyForm">
-            <h2>New Project</h2>
+            <h2 className="storyFormHeader">New Project</h2>
             <fieldset>
                 <div className="form-group">
-                    <input type="text" id="storyTitle" ref={title} placeholder="Title" />
+                    <label htmlFor="storyTitle">Title: </label>
+                    <div></div>
+                    <input type="text" id="storyTitle" ref={title} />
                 </div>
             </fieldset>
             <fieldset>
@@ -39,12 +41,24 @@ export const StoryForm = (props) => {
                     <input type="text" id="dailyWordCount" ref={dailyWord} />
                 </div>
             </fieldset>
-            <button type="submit"
-            onClick={event => {
-                event.preventDefault()
-                constructNewStory()
-            }}
-            className="btn btn-primary">Save Story</button>
+            <section className="storyFormButtons">
+                <div className="formBtn">
+                    <button type="submit"
+                        onClick={event => {
+                            event.preventDefault()
+                            constructNewStory()
+                        }}
+                        className="btn btn-primary">Save Story</button>
+                </div>
+                <div className="formBtn">
+                    <button type="submit"
+                        onClick={event => {
+                            event.preventDefault()
+                            props.history.push("/")
+                        }}
+                        className="btn btn-primary">Dashboard</button>
+                </div>
+            </section>
         </form>
     )
 }
