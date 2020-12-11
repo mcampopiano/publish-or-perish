@@ -11,3 +11,25 @@
 #magListBtn {
     margin: 3px;
 }
+
+.magDetailsTitle {
+    text-align: center;
+}
+
+.detailsPendingDisplay, .acceptedRejectedDisplay {
+    display: flex;
+    /* justify-content: space-between; */
+    border: 3px solid black;
+    /* margin: 2px */
+}
+
+.pendingSubmissions, .acceptedSubmissions, .rejectedSubmissions, .magazineDetails {
+    border: 1px solid;
+    flex: 1
+}
+
+.magCardTitle, .pendingHeader, .acceptedHeader, .rejectedHeader {
+    border: .5em solid;
+    text-align: center;
+    margin: 0;
+}
