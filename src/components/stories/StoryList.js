@@ -41,7 +41,7 @@ export const CompletedStoryList = (props) => {
                 stories.map(story => {
                     if (story.userId === parseInt(localStorage.getItem("app_user_id")) && story.complete) {
 
-                        return <CompletedStory key={story.id} story={story} {...props} />
+                        return <Story key={story.id} story={story} {...props} />
                     }
                 } )
             }

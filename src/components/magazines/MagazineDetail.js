@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { StorySubmitted, StoryAcceptedRejected } from "../stories/Story"
 import { SubmittedStoriesContext } from "../submittedStories/SubmittedStoriesProvider"
+import { StorySubmitted } from "../submittedStories/SubmittedStory"
 import { Magazine } from "./Magazine"
 
 export const MagazineDetail = (props) => {
@@ -44,7 +44,7 @@ export const MagazineDetail = (props) => {
                     {
                         submittedStories.map(sub => {
                             if (sub.magazineId === magazine.id && !sub.isPending && sub.accepted && parseInt(localStorage.getItem("app_user_id")) === sub.story.userId) {
-                                return <StoryAcceptedRejected story={sub.story} key={sub.id} mag={magazine} {...props} />
+                                return <StorySubmitted story={sub.story} key={sub.id} sub={sub} {...props} />
                             }
                         })
                     }
@@ -54,7 +54,7 @@ export const MagazineDetail = (props) => {
                     {
                         submittedStories.map(sub => {
                             if (sub.magazineId === magazine.id && !sub.isPending && !sub.accepted && parseInt(localStorage.getItem("app_user_id")) === sub.story.userId) {
-                                return <StoryAcceptedRejected story={sub.story} key={sub.id} mag={magazine} {...props} />
+                                return <StorySubmitted story={sub.story} key={sub.id} sub={sub} {...props} />
                             }
                         })
                     }
