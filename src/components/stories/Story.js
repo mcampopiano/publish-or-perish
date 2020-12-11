@@ -24,11 +24,19 @@ export const Story = ({ story, history }) => {
             <input type="checkbox" ref={complete} onChange={storyComplete} />
             <p>Total word count goal: {story.totalWordGoal}</p>
             <p>Daily word count goal: {story.dailyWordGoal}</p>
-            <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
-            <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
-                <button>View notes</button>
-            </Link>
-            <button onClick={() => deleteStory(story)}>Delete Story</button>
+            <section className="buttons">
+                <div className="btnDiv">
+                    <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
+                </div>
+                <div className="btnDiv">
+                    <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
+                        <button>View notes</button>
+                    </Link>
+                </div>
+                <div className="btnDiv">
+                    <button onClick={() => deleteStory(story)}>Delete Story</button>
+                </div>
+            </section>
 
         </div>
     )
@@ -36,7 +44,7 @@ export const Story = ({ story, history }) => {
 
 
 export const CompletedStory = ({ story, history }) => {
-    const {editStory, deleteStory} = useContext(StoryContext)
+    const { editStory, deleteStory } = useContext(StoryContext)
     const complete = useRef(null)
     const storyComplete = () => {
         editStory({
@@ -53,9 +61,9 @@ export const CompletedStory = ({ story, history }) => {
         <div className="story">
             <h3>{story.title}</h3>
             <label htmlFor="completeBox">Check to mark story incomplete</label>
-            <input type="checkbox" checked ref={complete} onChange={storyComplete}/>
+            <input type="checkbox" checked ref={complete} onChange={storyComplete} />
             <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
-            <Link to={{pathname: `/stories/notes/${story.id}`, state: {chosenStory: story}}}>
+            <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
                 <button>View notes</button>
             </Link>
             <button onClick={() => deleteStory(story)}>Delete story</button>
@@ -64,8 +72,8 @@ export const CompletedStory = ({ story, history }) => {
 }
 
 export const StorySubmitted = ({ story, history, mag, sub }) => {
-    const { deleteStory} = useContext(StoryContext)
-    const {editSubmission} = useContext(SubmittedStoriesContext)
+    const { deleteStory } = useContext(StoryContext)
+    const { editSubmission } = useContext(SubmittedStoriesContext)
 
     const accepted = useRef(false)
 
@@ -117,7 +125,7 @@ export const StorySubmitted = ({ story, history, mag, sub }) => {
 
 
 export const StoryAcceptedRejected = ({ story, history, mag }) => {
-    const { deleteStory} = useContext(StoryContext)
+    const { deleteStory } = useContext(StoryContext)
 
     return (
         <div className="story">

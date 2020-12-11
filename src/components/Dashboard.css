@@ -1,0 +1,8 @@
+.dashTitle {
+    text-align: center;
+}
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

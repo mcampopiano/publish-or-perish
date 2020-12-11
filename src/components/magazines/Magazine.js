@@ -6,7 +6,7 @@ export const Magazine = ({ mag, history }) => {
     const { deleteMagazine } = useContext(MagazineContext)
     return (
         <div className="magazineCard">
-            <h3>Publication Details</h3>
+            <h2 className="magCardTitle">Publication Details</h2>
             <p>Open submission dates: {mag.submissionDates}</p>
             <p>Word count requriements: {mag.wordCount}</p>
             <p>Preffered genre: {mag.genre}</p>
