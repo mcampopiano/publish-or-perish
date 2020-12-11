@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react"
 import { Link } from "react-router-dom"
 import { StoryContext } from "./StoryProvider"
+import "./Story.css"
 
 export const Story = ({ story, history }) => {
     const { editStory, deleteStory } = useContext(StoryContext)
@@ -19,7 +20,7 @@ export const Story = ({ story, history }) => {
 
         return (
             <div className="story">
-                <h3>{story.title}</h3>
+                <h3 className="storyCardTitle">{story.title}</h3>
                 <label htmlFor="completeBox">Completed</label>
                 <input type="checkbox" ref={complete} onChange={storyComplete} />
                 <p>Total word count goal: {story.totalWordGoal}</p>
@@ -43,7 +44,7 @@ export const Story = ({ story, history }) => {
     } else {
         return (
             <div className="story">
-                <h3>{story.title}</h3>
+                <h3 className="storyCardTitle">{story.title}</h3>
                 <label htmlFor="completeBox">Complete</label>
                 <input type="checkbox" checked ref={complete} onChange={storyComplete} />
                 <p>Total word count goal: {story.totalWordGoal}</p>

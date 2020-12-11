@@ -1,0 +1,17 @@
+.storyList {
+    border: 5px solid;
+    height: 500px;
+    width: 500px;
+}
+
+.storyListHeader {
+    border: .5em solid;
+    text-align: center;
+    margin: 0;
+}
+
+.storyCardDisplay {
+    height: 420px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
