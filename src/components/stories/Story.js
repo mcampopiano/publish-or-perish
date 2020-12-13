@@ -37,6 +37,11 @@ export const Story = ({ story, history }) => {
                     <div className="btnDiv">
                         <button onClick={() => deleteStory(story)}>Delete Story</button>
                     </div>
+                    <div className="btnDiv">
+                        <Link to={{pathname: `stories/edit/${story.id}`, state: {chosenStory: story}}}>
+                            <button>Edit</button>
+                        </Link>
+                    </div>
                 </section>
 
             </div>
