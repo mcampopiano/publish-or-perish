@@ -38,7 +38,7 @@ export const StoryForm = (props) => {
                 dailyWordGoal: parseInt(story.dailyWordGoal),
                 title: story.title,
                 totalWordGoal: parseInt(story.totalWordGoal),
-                userId: parseInt(story.useId)
+                userId: parseInt(story.userId)
 
             })
             .then(props.history.push("/"))

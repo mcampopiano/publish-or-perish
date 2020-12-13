@@ -71,10 +71,10 @@
     {
       "id": 10,
       "complete": false,
-      "dailyWordGoal": 6,
-      "title": "Nap time",
+      "dailyWordGoal": 2,
+      "title": "Nappy time",
       "totalWordGoal": 15,
-      "userId": null
+      "userId": 1
     }
   ],
   "submittedStories": [
