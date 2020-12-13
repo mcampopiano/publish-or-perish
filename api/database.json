@@ -67,6 +67,14 @@
       "totalWordGoal": 20000,
       "dailyWordGoal": 2000,
       "complete": false
+    },
+    {
+      "id": 10,
+      "complete": false,
+      "dailyWordGoal": 2,
+      "title": "Nappy time",
+      "totalWordGoal": 15,
+      "userId": 1
     }
   ],
   "submittedStories": [

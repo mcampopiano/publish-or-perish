@@ -32,6 +32,10 @@ export const ApplicationViews = () => {
                         props => <StoryForm {...props} />
 
                     } />
+                    <Route path="/stories/edit/:storyId(\d+)" render={
+                        props => <StoryForm {...props} />
+
+                    } />
                     {/* Putting the : before storyId in the url means that storyId will be a variable which stores the value of whatever is in that position in the url. I will have access to that using props.match.params. The (/d+) is specifying that the value must be a number. */}
                     <Route exact path="/stories/notes/create/:storyId(\d+)" render={
                         props => <NoteForm {...props} />
