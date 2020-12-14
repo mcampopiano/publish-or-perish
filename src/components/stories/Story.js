@@ -1,10 +1,13 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { StoryContext } from "./StoryProvider"
 import "./Story.css"
+import { MagazineContext } from "../magazines/MagazineProvider"
 
-export const Story = ({ story, history }) => {
+export const Story = ({ story, history, mags }) => {
     const { editStory, deleteStory } = useContext(StoryContext)
+
+
     const complete = useRef(null)
     const storyComplete = () => {
         editStory({
@@ -37,6 +40,7 @@ export const Story = ({ story, history }) => {
                     <div className="btnDiv">
                         <button onClick={() => deleteStory(story)}>Delete Story</button>
                     </div>
+                    
                     <div className="btnDiv">
                         <Link to={{pathname: `stories/edit/${story.id}`, state: {chosenStory: story}}}>
                             <button>Edit</button>
@@ -54,6 +58,12 @@ export const Story = ({ story, history }) => {
                 <input type="checkbox" checked ref={complete} onChange={storyComplete} />
                 <p>Total word count goal: {story.totalWordGoal}</p>
                 <p>Daily word count goal: {story.dailyWordGoal}</p>
+                <select>
+                    <option value="0">Select a magazine</option>
+                    {
+                        mags.map(mag => <option key={mag.id}>{mag.name}</option>)
+                    }
+                </select>
                 <section className="storyButtons">
                     <div className="btnDiv">
                         <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
