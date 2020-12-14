@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react"
+import { MagazineContext } from "../magazines/MagazineProvider"
 import { Story } from "./Story"
 import { StoryContext } from "./StoryProvider"
 
@@ -6,7 +7,7 @@ export const StoryList = (props) => {
     const { stories, getStories } = useContext(StoryContext)
 
     useEffect(() => {
-        getStories()
+       getStories()
     }, [])
 
     return (
@@ -17,7 +18,6 @@ export const StoryList = (props) => {
                 {
                     stories.map(story => {
                         if (story.userId === parseInt(localStorage.getItem("app_user_id")) && !story.complete) {
-
                             return <Story key={story.id} story={story} {...props} />
                         }
                     })
@@ -31,13 +31,14 @@ export const StoryList = (props) => {
 }
 export const CompletedStoryList = (props) => {
     const { stories, getStories } = useContext(StoryContext)
+    const {magazines, getMagazines} =useContext(MagazineContext)
 
     useEffect(() => {
-        getStories()
+        getMagazines().then(getStories)
     }, [])
 
     return (
-        <div className="completedStoryList">
+        <div className="completedStoryList"> 
             <h2 className="completedStoryHeader">Completed Stories</h2>
             <section className="completedStoryDisplay">
 
@@ -45,7 +46,7 @@ export const CompletedStoryList = (props) => {
                     stories.map(story => {
                         if (story.userId === parseInt(localStorage.getItem("app_user_id")) && story.complete) {
 
-                            return <Story key={story.id} story={story} {...props} />
+                            return <Story key={story.id} story={story} mags={magazines}{...props} />
                         }
                     })
                 }

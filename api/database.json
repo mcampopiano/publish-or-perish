@@ -75,6 +75,14 @@
       "title": "Nappy time",
       "totalWordGoal": 15,
       "userId": 1
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "title": "Cin City",
+      "totalWordGoal": 2000,
+      "dailyWordGoal": 500,
+      "complete": true
     }
   ],
   "submittedStories": [
@@ -131,6 +139,15 @@
       "isPending": true,
       "accepted": false,
       "id": 9
+    },
+    {
+      "magazineId": 2,
+      "storyId": 11,
+      "dateSubmitted": "2020-12-14",
+      "expectedResponseDate": "2020-12-15",
+      "isPending": true,
+      "accepted": false,
+      "id": 10
     }
   ],
   "notes": [

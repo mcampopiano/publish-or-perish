@@ -16,7 +16,7 @@ import { SubmittedStoriesProvider } from "./submittedStories/SubmittedStoriesPro
 export const ApplicationViews = () => {
     return (
         <>
-        {/* Each user-defined component that renders to the DOM must be wrapped in any Provider upon which it is dependent. e.g. since the Dashboard component uses data from the StoryProvider component, it must be wrapped in <StoryProvider> tags. It also uses data from the MagazineProvider, so the same rule applies. */}
+            {/* Each user-defined component that renders to the DOM must be wrapped in any Provider upon which it is dependent. e.g. since the Dashboard component uses data from the StoryProvider component, it must be wrapped in <StoryProvider> tags. It also uses data from the MagazineProvider, so the same rule applies. */}
             <MagazineProvider>
                 <StoryProvider>
                     {/* React lets you call user-efined components similar to calling a DOM tag, and pass it certain properties (in this case, props, on which I've used the spread operator) as an argument to the that component. It distinguishes user defined by starting with a capital letter. The spread operator lets us pass all key:value pairs from the props object inherited from react-router (e.g. location, history, match)*/}
@@ -25,6 +25,7 @@ export const ApplicationViews = () => {
                     } />
                 </StoryProvider>
             </MagazineProvider>
+
 
             <NoteProvider>
                 <StoryProvider>
@@ -62,11 +63,13 @@ export const ApplicationViews = () => {
                 </SubmittedStoriesProvider>
             </StoryProvider>
 
-            <StoryProvider>
-                <Route path="/stories/complete" render={
-                    props => <CompletedStoryList {...props} />
-                } />
-            </StoryProvider>
+            <MagazineProvider>
+                <StoryProvider>
+                    <Route path="/stories/complete" render={
+                        props => <CompletedStoryList {...props} />
+                    } />
+                </StoryProvider>
+            </MagazineProvider>
 
             <SubmittedStoriesProvider>
                 <StoryProvider>
