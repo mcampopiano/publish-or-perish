@@ -32,8 +32,13 @@ export const MagazineProvider = (props) => {
         .then(getMagazines)
     }
 
+    const getMagById = id => {
+        return fetch(`http://localhost:8088/magazines/${id}`)
+        .then(r => r.json())
+    }
+
     return (
-        <MagazineContext.Provider value={{magazines, setMagazines, getMagazines, addMagazine, deleteMagazine}}>
+        <MagazineContext.Provider value={{magazines, setMagazines, getMagazines, addMagazine, deleteMagazine, getMagById}}>
             {/* from React documentation: props.children is available on every component. It contains the content between the opening and closing tags of a component. */}
             {props.children}
         </MagazineContext.Provider>

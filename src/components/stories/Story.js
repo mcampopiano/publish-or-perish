@@ -1,11 +1,12 @@
-import React, { useContext, useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
+import React, { useContext, useEffect, useRef, useState } from "react"
+import { Link, Redirect } from "react-router-dom"
 import { StoryContext } from "./StoryProvider"
 import "./Story.css"
 import { MagazineContext } from "../magazines/MagazineProvider"
 
 export const Story = ({ story, history, mags }) => {
     const { editStory, deleteStory } = useContext(StoryContext)
+    const {getMagById} = useContext(MagazineContext)
 
 
     const complete = useRef(null)
@@ -58,10 +59,13 @@ export const Story = ({ story, history, mags }) => {
                 <input type="checkbox" checked ref={complete} onChange={storyComplete} />
                 <p>Total word count goal: {story.totalWordGoal}</p>
                 <p>Daily word count goal: {story.dailyWordGoal}</p>
-                <select>
+                <select onChange={event => {
+                    const magazine = mags.find(mag => mag.id === parseInt(event.target.value))
+                    history.push("/magazines/submissions", {chosenMag: magazine})}
+                    }>
                     <option value="0">Select a magazine</option>
                     {
-                        mags.map(mag => <option key={mag.id}>{mag.name}</option>)
+                        mags.map(mag => <option key={mag.id} value={mag.id}>{mag.name}</option>)
                     }
                 </select>
                 <section className="storyButtons">
