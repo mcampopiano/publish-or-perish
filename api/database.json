@@ -62,11 +62,11 @@
     },
     {
       "id": 9,
-      "userId": 1,
-      "title": "Pop",
-      "totalWordGoal": 20000,
-      "dailyWordGoal": 2000,
-      "complete": false
+      "complete": false,
+      "dailyWordGoal": 20000,
+      "title": "Popeye",
+      "totalWordGoal": 200000,
+      "userId": 1
     },
     {
       "id": 10,
