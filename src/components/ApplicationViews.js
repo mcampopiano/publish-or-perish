@@ -42,6 +42,10 @@ export const ApplicationViews = () => {
                         props => <NoteForm {...props} />
 
                     } />
+                    <Route exact path="/notes/edit/:noteId(\d+)" render={
+                        props => <NoteForm {...props} />
+
+                    } />
                     <Route exact path="/stories/notes/:storyId(\d+)" render={
                         props => <NoteList {...props} />
 
