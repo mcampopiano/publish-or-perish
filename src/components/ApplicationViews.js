@@ -60,6 +60,10 @@ export const ApplicationViews = () => {
                             props => <MagazineForm {...props} />
 
                         } />
+                        <Route path="/magazine/edit/:magazineId(\d+)" render={
+                            props => <MagazineForm {...props} />
+
+                        } />
                         <Route exact path="/magazines/:magazineId(\d+)" render={
                             props => <MagazineDetail {...props} />
                         } />

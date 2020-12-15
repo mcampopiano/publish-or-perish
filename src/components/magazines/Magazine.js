@@ -16,6 +16,9 @@ export const Magazine = ({ mag, history }) => {
                 deleteMagazine(mag)
                 history.push("/")
             }}>Delete Magazine</button>
+            <button onClick={() => history.push(`/magazine/edit/${mag.id}`, { chosenMagazine: mag })}>
+                Edit Magazine Details
+                </button>
         </div>
     )
 }

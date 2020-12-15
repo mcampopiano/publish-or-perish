@@ -1,28 +1,58 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import { MagazineContext } from "./MagazineProvider"
 
 export const MagazineForm = (props) => {
-    const { addMagazine } = useContext(MagazineContext)
+    const { addMagazine, getMagazines, editMagazine, magazines } = useContext(MagazineContext)
 
-    // useRef is a react hook which returns an object with a .current property which is initially set to the argument passed to the function. The object is mutable, so it is a good way to capture user input.
-    const name = useRef(null)
-    const submissions = useRef(null)
-    const words = useRef(null)
-    const genre = useRef(null)
-    const response = useRef(null)
-    const website = useRef(null)
+    const [magazine, setMagazine] = useState({name: "", sbumissionDates: "", wordCount: "", genre: "", responseTime: "", website: ""})
+   
+    const editMode = props.match.params.hasOwnProperty("magazineId")
 
+    const handleControlledInputChange = (event) => {
+        const newMagazine = Object.assign({}, magazine)
+        newMagazine[event.target.name] = event.target.value
+        setMagazine(newMagazine)
+    }
+
+    const getMagazineInEditMode = () => {
+        if (editMode) {
+            const selectedMagazine= props.location.state.chosenMagazine|| {}
+            setMagazine(selectedMagazine)
+        }
+    }
+
+    useEffect(() => {
+        getMagazines()
+    }, [])
+
+    useEffect(() => {
+        getMagazineInEditMode()
+    }, [magazines])
     const constructMagazine = () => {
-        // Uses the value of the .current property of the variables storing the objects returned from the useRef hooks.
-        addMagazine({
-            name: name.current.value,
-            submissionDates: submissions.current.value,
-            wordCount: words.current.value,
-            genre: genre.current.value,
-            responseTime: response.current.value,
-            website: website.current.value
-        })
+        if (editMode) {
+            editMagazine({
+                id: magazine.id,
+                name: magazine.name,
+                submissionDates: magazine.submissionDates,
+                wordCount: magazine.wordCount,
+                genre: magazine.genre,
+                responseTime: magazine.responseTime,
+                website: magazine.website
+            })
             .then(() => props.history.push("/"))
+        } else {
+
+            addMagazine({
+                name: magazine.name,
+                submissionDates: magazine.submissionDates,
+                wordCount: magazine.wordCount,
+                genre: magazine.genre,
+                responseTime: magazine.responseTime,
+                website: magazine.website
+            })
+                .then(() => props.history.push("/"))
+        }
+      
     }
 
     return (
@@ -32,37 +62,37 @@ export const MagazineForm = (props) => {
                 <div className="form-group">
                     <label htmlFor="magTitle">Title of publication: </label>
                     {/* The ref attribute here referres to the variable storing the useRef returned data, and will mutate the value of the .current property to the value of the input. */}
-                    <input type="text" id="magTitle" ref={name} className="form-control" />
+                    <input type="text" id="magTitle" name="name" value={magazine.name} onChange={handleControlledInputChange} className="form-control" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="submissionDates">Open submission dates: </label>
-                    <input type="text" id="submissionDates" ref={submissions} className="form-control" placeholder="e.g. Mar 1 - Sep 1" />
+                    <input type="text" id="submissionDates" name="submissionDates" value={magazine.submissionDates} onChange={handleControlledInputChange} className="form-control" placeholder="e.g. Mar 1 - Sep 1" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="responseTime">Typical response time: </label>
-                    <input type="text" id="responseTime" ref={response} className="form-control" placeholder="e.g. 6 - 12 months" />
+                    <input type="text" id="responseTime" name="responseTime" value={magazine.responseTime} onChange={handleControlledInputChange} className="form-control" placeholder="e.g. 6 - 12 months" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="wordCount">Word count requirements: </label>
-                    <input type="text" id="wordCount" ref={words} className="form-control" placeholder="e.g. 300 - 5,000 words" />
+                    <input type="text" id="wordCount" name="wordCount" value={magazine.wordCount} onChange={handleControlledInputChange} className="form-control" placeholder="e.g. 300 - 5,000 words" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="genre">Preferred genre: </label>
-                    <input type="text" id="genre" ref={genre} className="form-control" placeholder="e.g. sci-fi/fantasy" />
+                    <input type="text" id="genre" name="genre" value={magazine.genre} onChange={handleControlledInputChange} className="form-control" placeholder="e.g. sci-fi/fantasy" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="website">Publication website: </label>
-                    <input type="text" id="website" ref={website} className="form-control" />
+                    <input type="text" id="website" name="website" value={magazine.website} onChange={handleControlledInputChange} className="form-control" />
                 </div>
             </fieldset>
             <section className="formButtons">

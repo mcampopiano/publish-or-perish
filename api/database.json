@@ -63,9 +63,9 @@
     {
       "id": 9,
       "complete": false,
-      "dailyWordGoal": 20000,
+      "dailyWordGoal": 2000,
       "title": "Popeye",
-      "totalWordGoal": 200000,
+      "totalWordGoal": 20000,
       "userId": 1
     },
     {
