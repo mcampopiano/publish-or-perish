@@ -4,7 +4,7 @@ import { StoryContext } from "./StoryProvider"
 export const StoryForm = (props) => {
     const { addStory, stories, editStory, getStories } = useContext(StoryContext)
 
-    const [story, setStory] = useState({})
+    const [story, setStory] = useState({title: "", totalWordGoal: 0, dailyWordGoal: 0})
 
     const editMode = props.match.params.hasOwnProperty("storyId")
 
