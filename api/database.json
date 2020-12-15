@@ -22,11 +22,11 @@
   "stories": [
     {
       "id": 1,
-      "userId": 1,
-      "title": "New story",
-      "totalWordGoal": 7000,
+      "complete": false,
       "dailyWordGoal": 2000,
-      "complete": false
+      "title": "Newish story",
+      "totalWordGoal": 7000,
+      "userId": 1
     },
     {
       "id": 2,
@@ -185,6 +185,11 @@
       "storyId": 8,
       "entry": "second note",
       "id": 7
+    },
+    {
+      "id": 8,
+      "entry": "Now you work",
+      "storyId": 10
     }
   ],
   "users": [

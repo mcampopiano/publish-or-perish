@@ -1,17 +1,51 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { NoteContext } from "./NoteProvider"
 
 export const NoteForm = (props) => {
-    const { addNote } = useContext(NoteContext)
+    const { addNote, getNotes, notes, editNote } = useContext(NoteContext)
 
-    const entry = useRef(null)
+    const [note, setNote] = useState({entry: ""})
+
+    const editMode = props.match.params.hasOwnProperty("noteId")
+
+    const handleControlledInputChange = (event) => {
+        const newNote = Object.assign({}, note)
+        newNote[event.target.name] = event.target.value
+        setNote(newNote)
+    }
+
+    const getNoteInEditMode = () => {
+        if (editMode) {
+            const selectedNote = props.location.state.chosenNote || {}
+            setNote(selectedNote)
+        }
+    }
+
+    useEffect(() => {
+        getNotes()
+    }, [])
+    
+    useEffect(() => {
+        getNoteInEditMode()
+    }, [notes])
 
     const constructNote = () => {
-        addNote({
-            storyId: parseInt(props.match.params.storyId),
-            entry: entry.current.value
-        })
+        if (editMode) {
+            editNote({
+                id: note.id,
+                entry: note.entry,
+                storyId: note.storyId
+            })
             .then(props.history.push("/"))
+        } else {
+
+            addNote({
+                storyId: parseInt(props.match.params.storyId),
+                entry: note.entry
+            })
+                .then(props.history.push("/"))
+        }
+
     }
 
     return (
@@ -19,7 +53,7 @@ export const NoteForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="noteEntry">Enter note: </label>
-                    <textarea id="noteEntry" ref={entry}></textarea>
+                    <textarea id="noteEntry" name="entry" value={note.entry} onChange={handleControlledInputChange}></textarea>
                 </div>
             </fieldset>
             <section className="formButtons">

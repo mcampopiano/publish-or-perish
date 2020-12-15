@@ -20,6 +20,11 @@ export const NoteList = (props) => {
                             return (
                                 <article className="noteEntry" key={note.id}>
                                     <p> {note.entry} </p>
+                                    <div className="btnDiv">
+                                        <button onClick={() => props.history.push(`/notes/edit/${note.id}`, {chosenNote: note} )}>
+                                            Edit note
+                                        </button>
+                                    </div>
                                 </article>
                             )
                         }
