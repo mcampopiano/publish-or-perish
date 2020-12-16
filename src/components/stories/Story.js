@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useRef, useState } from "react"
-import { Link, Redirect } from "react-router-dom"
+import React, { useContext, useRef, } from "react"
+import { Link} from "react-router-dom"
 import { StoryContext } from "./StoryProvider"
 import "./Story.css"
-import { MagazineContext } from "../magazines/MagazineProvider"
 
-export const Story = ({ story, history, mags }) => {
+export const Story = ({ story, history, mags, subStories }) => {
     const { editStory, deleteStory } = useContext(StoryContext)
-    const {getMagById} = useContext(MagazineContext)
+
 
 
     const complete = useRef(null)
@@ -68,6 +67,41 @@ export const Story = ({ story, history, mags }) => {
                         mags.map(mag => <option key={mag.id} value={mag.id}>{mag.name}</option>)
                     }
                 </select>
+                <section className="Submissions">
+                    {
+                        subStories.map(ss => {
+                            if (ss.storyId === story.id && ss.isPending) {
+                               return (
+                                   <article key={ss.id} className="pending">
+                                       <div className="mag">
+                                           <h5>{ss.magazine.name}</h5>
+                                           <p>Status: Pending</p>
+                                           <p>Expected response date: {ss.expectedResponseDate}</p>
+                                       </div>
+                                   </article>
+                               )
+                            } else if (ss.storyId === story.id && !ss.isPending && ss.accepted) {
+                                return (
+                                    <article key={ss.id} className="accepted">
+                                        <div className="mag">
+                                            <h5>{ss.magazine.name}</h5>
+                                            <p>Status: Accepted</p>
+                                        </div>
+                                    </article>
+                                )
+                            } else if (ss.storyId === story.id && !ss.isPending && !ss.accepted) {
+                                return (
+                                    <article key={ss.id} className="rejected">
+                                        <div className="mag">
+                                            <h5>{ss.magazine.name}</h5>
+                                            <p>Status: Rejected</p>
+                                        </div>
+                                    </article>
+                                )
+                            }
+                        })
+                    }
+                </section>
                 <section className="storyButtons">
                     <div className="btnDiv">
                         <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
