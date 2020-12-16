@@ -71,13 +71,15 @@ export const ApplicationViews = () => {
                 </SubmittedStoriesProvider>
             </StoryProvider>
 
-            <MagazineProvider>
-                <StoryProvider>
-                    <Route path="/stories/complete" render={
-                        props => <CompletedStoryList {...props} />
-                    } />
-                </StoryProvider>
-            </MagazineProvider>
+            <SubmittedStoriesProvider>
+                <MagazineProvider>
+                    <StoryProvider>
+                        <Route path="/stories/complete" render={
+                            props => <CompletedStoryList {...props} />
+                        } />
+                    </StoryProvider>
+                </MagazineProvider>
+            </SubmittedStoriesProvider>
 
             <SubmittedStoriesProvider>
                 <StoryProvider>

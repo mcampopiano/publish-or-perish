@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from "react"
 import { MagazineContext } from "../magazines/MagazineProvider"
+import { SubmittedStoriesContext } from "../submittedStories/SubmittedStoriesProvider"
 import { Story } from "./Story"
 import { StoryContext } from "./StoryProvider"
 
 export const StoryList = (props) => {
     const { stories, getStories } = useContext(StoryContext)
+    
 
     useEffect(() => {
        getStories()
@@ -32,9 +34,10 @@ export const StoryList = (props) => {
 export const CompletedStoryList = (props) => {
     const { stories, getStories } = useContext(StoryContext)
     const {magazines, getMagazines} =useContext(MagazineContext)
+    const {getSubmittedStories, submittedStories} = useContext(SubmittedStoriesContext)
 
     useEffect(() => {
-        getMagazines().then(getStories)
+        getMagazines().then(getSubmittedStories).then(getStories)
     }, [])
 
     return (
@@ -46,7 +49,7 @@ export const CompletedStoryList = (props) => {
                     stories.map(story => {
                         if (story.userId === parseInt(localStorage.getItem("app_user_id")) && story.complete) {
 
-                            return <Story key={story.id} story={story} mags={magazines}{...props} />
+                            return <Story key={story.id} subStories={submittedStories} story={story} mags={magazines}{...props} />
                         }
                     })
                 }
