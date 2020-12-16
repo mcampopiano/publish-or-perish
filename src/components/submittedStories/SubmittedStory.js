@@ -40,6 +40,7 @@ export const StorySubmitted = ({ story, history, sub }) => {
                 <h3 className="storyCardTitle">{story.title}</h3>
                 <p>Total word count goal: {story.totalWordGoal}</p>
                 <p>Daily word count goal: {story.dailyWordGoal}</p>
+                <p>Expected response date: {sub.expectedResponseDate}</p>
                 <select defaultValue="" ref={accepted} onChange={storyResponse}>
                     <option value="0">Select response</option>
                     <option value="true">Accepted</option>

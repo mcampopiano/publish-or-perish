@@ -76,6 +76,7 @@ export const Story = ({ story, history, mags, subStories }) => {
                                        <div className="mag">
                                            <h5>{ss.magazine.name}</h5>
                                            <p>Status: Pending</p>
+                                           <p>Expected response date: {ss.expectedResponseDate}</p>
                                        </div>
                                    </article>
                                )

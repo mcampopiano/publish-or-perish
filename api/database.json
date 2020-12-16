@@ -148,6 +148,15 @@
       "isPending": true,
       "accepted": false,
       "id": 10
+    },
+    {
+      "magazineId": 2,
+      "storyId": 7,
+      "dateSubmitted": "2020-12-16",
+      "expectedResponseDate": "2020-12-31",
+      "isPending": true,
+      "accepted": false,
+      "id": 11
     }
   ],
   "notes": [
