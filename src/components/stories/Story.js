@@ -1,5 +1,5 @@
 import React, { useContext, useRef, } from "react"
-import { Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { StoryContext } from "./StoryProvider"
 import "./Story.css"
 
@@ -40,9 +40,9 @@ export const Story = ({ story, history, mags, subStories }) => {
                     <div className="btnDiv">
                         <button onClick={() => deleteStory(story)}>Delete Story</button>
                     </div>
-                    
+
                     <div className="btnDiv">
-                        <Link to={{pathname: `stories/edit/${story.id}`, state: {chosenStory: story}}}>
+                        <Link to={{ pathname: `stories/edit/${story.id}`, state: { chosenStory: story } }}>
                             <button>Edit</button>
                         </Link>
                     </div>
@@ -52,55 +52,58 @@ export const Story = ({ story, history, mags, subStories }) => {
         )
     } else {
         return (
-            <div className="story">
-                <h3 className="storyCardTitle">{story.title}</h3>
-                <label htmlFor="completeBox">Complete</label>
-                <input type="checkbox" checked ref={complete} onChange={storyComplete} />
-                <p>Total word count goal: {story.totalWordGoal}</p>
-                <p>Daily word count goal: {story.dailyWordGoal}</p>
-                <select onChange={event => {
-                    const magazine = mags.find(mag => mag.id === parseInt(event.target.value))
-                    history.push("/magazines/submissions", {chosenMag: magazine})}
+            <div className="story completed">
+                <h3 className="storyCardTitle--completed">{story.title}</h3>
+                <section className="storyCardDetails">
+                    <label htmlFor="completeBox">Complete</label>
+                    <input type="checkbox" checked ref={complete} onChange={storyComplete} />
+                    <p>Total word count goal: {story.totalWordGoal}</p>
+                    <p>Daily word count goal: {story.dailyWordGoal}</p>
+                    <select onChange={event => {
+                        const magazine = mags.find(mag => mag.id === parseInt(event.target.value))
+                        history.push("/magazines/submissions", { chosenMag: magazine })
+                    }
                     }>
-                    <option value="0">Select a magazine</option>
-                    {
-                        mags.map(mag => <option key={mag.id} value={mag.id}>{mag.name}</option>)
-                    }
-                </select>
-                <section className="Submissions">
-                    {
-                        subStories.map(ss => {
-                            if (ss.storyId === story.id && ss.isPending) {
-                               return (
-                                   <article key={ss.id} className="pending">
-                                       <div className="mag">
-                                           <h5>{ss.magazine.name}</h5>
-                                           <p>Status: Pending</p>
-                                           <p>Expected response date: {ss.expectedResponseDate}</p>
-                                       </div>
-                                   </article>
-                               )
-                            } else if (ss.storyId === story.id && !ss.isPending && ss.accepted) {
-                                return (
-                                    <article key={ss.id} className="accepted">
-                                        <div className="mag">
-                                            <h5>{ss.magazine.name}</h5>
-                                            <p>Status: Accepted</p>
-                                        </div>
-                                    </article>
-                                )
-                            } else if (ss.storyId === story.id && !ss.isPending && !ss.accepted) {
-                                return (
-                                    <article key={ss.id} className="rejected">
-                                        <div className="mag">
-                                            <h5>{ss.magazine.name}</h5>
-                                            <p>Status: Rejected</p>
-                                        </div>
-                                    </article>
-                                )
-                            }
-                        })
-                    }
+                        <option value="0">Select a magazine</option>
+                        {
+                            mags.map(mag => <option key={mag.id} value={mag.id}>{mag.name}</option>)
+                        }
+                    </select>
+                    <section className="Submissions">
+                        {
+                            subStories.map(ss => {
+                                if (ss.storyId === story.id && ss.isPending) {
+                                    return (
+                                        <article key={ss.id} className="pending">
+                                            <div className="mag">
+                                                <h5>{ss.magazine.name}</h5>
+                                                <p>Status: Pending</p>
+                                                <p>Expected response date: {ss.expectedResponseDate}</p>
+                                            </div>
+                                        </article>
+                                    )
+                                } else if (ss.storyId === story.id && !ss.isPending && ss.accepted) {
+                                    return (
+                                        <article key={ss.id} className="accepted">
+                                            <div className="mag">
+                                                <h5>{ss.magazine.name}</h5>
+                                                <p>Status: Accepted</p>
+                                            </div>
+                                        </article>
+                                    )
+                                } else if (ss.storyId === story.id && !ss.isPending && !ss.accepted) {
+                                    return (
+                                        <article key={ss.id} className="rejected">
+                                            <div className="mag">
+                                                <h5>{ss.magazine.name}</h5>
+                                                <p>Status: Rejected</p>
+                                            </div>
+                                        </article>
+                                    )
+                                }
+                            })
+                        }
+                    </section>
                 </section>
                 <section className="storyButtons">
                     <div className="btnDiv">

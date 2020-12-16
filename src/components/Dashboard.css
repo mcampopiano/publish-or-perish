@@ -1,3 +1,16 @@
+body {
+    background-color:  #8FB8DE;
+    color: rgb(243, 241, 241);
+}
+
+a {
+    color: rgb(243, 241, 241);
+}
+
+a:hover {
+    color: rgb(223, 41, 223);
+}
+
 .dashTitle {
     text-align: center;
 }

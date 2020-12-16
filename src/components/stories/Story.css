@@ -1,10 +1,11 @@
 .storyList {
+    background-color: #124559;
     border: 5px solid;
     height: 500px;
     width: 500px;
 }
 
-.storyListHeader {
+.storyListHeader, .storyCardTitle--completed {
     border: .5em solid;
     text-align: center;
     margin: 0;
@@ -16,9 +17,17 @@
     overflow-x: hidden;
 }
 
-.story {
+.storyCardDetails {
+    height: 332px;
+}
+
+.completed {
+    background-color: #124559;
+    border: 5px solid;
+    flex: 25%;
+    height: 400px;
     margin: 2px;
-    flex: 25%
+    width: 400px;
 }
 
 .storyButtons {
@@ -59,4 +68,10 @@ fieldset {
 }
 .formBtn {
     margin: 5%
+}
+
+.Submissions {
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 180px;
 }
