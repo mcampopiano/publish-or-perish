@@ -21,22 +21,6 @@
   ],
   "stories": [
     {
-      "id": 1,
-      "userId": 1,
-      "title": "Newish story",
-      "totalWordGoal": 7000,
-      "dailyWordGoal": 2000,
-      "complete": true
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "title": "Dragon Drop",
-      "totalWordGoal": 7000,
-      "dailyWordGoal": 1000,
-      "complete": true
-    },
-    {
       "id": 4,
       "userId": 2,
       "title": "The Colorado Kid",
@@ -45,65 +29,79 @@
       "complete": true
     },
     {
+      "id": 5,
+      "userId": 1,
+      "title": "Dragon Drop",
+      "totalWordGoal": 10000,
+      "dailyWordGoal": 1000,
+      "complete": false
+    },
+    {
+      "title": "The Coding Chronicles",
+      "dailyWordGoal": 1500,
+      "totalWordGoal": 20000,
+      "userId": 1,
+      "complete": false,
+      "id": 6
+    },
+    {
       "id": 7,
       "userId": 1,
-      "title": "Silver Surfers",
-      "totalWordGoal": 250,
-      "dailyWordGoal": 20,
+      "title": "Sappy Sundays",
+      "totalWordGoal": 15000,
+      "dailyWordGoal": 2000,
       "complete": true
     },
     {
       "id": 8,
       "userId": 1,
-      "title": "Jisie's Cult",
-      "totalWordGoal": 15000,
-      "dailyWordGoal": 1500,
+      "title": "Manic Mondays",
+      "totalWordGoal": 20000,
+      "dailyWordGoal": 2000,
       "complete": true
     },
     {
       "id": 9,
       "userId": 1,
-      "title": "Popeye",
-      "totalWordGoal": 20000,
+      "title": "Terrible Tuesdays",
+      "totalWordGoal": 25000,
       "dailyWordGoal": 2000,
       "complete": true
     },
     {
       "id": 10,
       "userId": 1,
-      "title": "Nappy time",
-      "totalWordGoal": 15,
-      "dailyWordGoal": 2,
-      "complete": false
+      "title": "Wretched Wednesdays",
+      "totalWordGoal": 10000,
+      "dailyWordGoal": 1500,
+      "complete": true
     },
     {
       "id": 11,
       "userId": 1,
-      "title": "Cin City",
-      "totalWordGoal": 2000,
-      "dailyWordGoal": 500,
+      "title": "Thankful Thursdays",
+      "totalWordGoal": 12000,
+      "dailyWordGoal": 1000,
       "complete": true
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "title": "Frightful Fridays",
+      "totalWordGoal": 20000,
+      "dailyWordGoal": 2000,
+      "complete": false
+    },
+    {
+      "title": "Sick Saturdays",
+      "dailyWordGoal": 1000,
+      "totalWordGoal": 15000,
+      "userId": 1,
+      "complete": false,
+      "id": 13
     }
   ],
   "submittedStories": [
-    {
-      "id": 1,
-      "magazineId": 1,
-      "storyId": 2,
-      "dateSubmitted": "2020-12-08",
-      "expectedResponseDate": "2021-02-15",
-      "isPending": false,
-      "accepted": false
-    },
-    {
-      "id": 5,
-      "magazineId": 1,
-      "storyId": 7,
-      "dateSubmitted": "2020-12-09",
-      "expectedResponseDate": "2020-12-10",
-      "isPending": false,
-      "accepted": true
-    },
     {
       "id": 6,
       "magazineId": 2,
@@ -116,55 +114,59 @@
     {
       "id": 7,
       "magazineId": 1,
-      "storyId": 8,
-      "dateSubmitted": "2020-12-09",
-      "expectedResponseDate": "2021-02-17",
+      "storyId": 7,
+      "dateSubmitted": "2020-12-01",
+      "expectedResponseDate": "2021-01-20",
       "isPending": false,
-      "accepted": true
-    },
-    {
-      "id": 8,
-      "magazineId": 2,
-      "storyId": 9,
-      "dateSubmitted": "2020-12-10",
-      "expectedResponseDate": "2020-12-11",
-      "isPending": false,
-      "accepted": true
+      "accepted": false
     },
     {
       "magazineId": 1,
-      "storyId": 1,
-      "dateSubmitted": "2020-12-10",
-      "expectedResponseDate": "2020-12-11",
+      "storyId": 9,
+      "dateSubmitted": "2020-12-17",
+      "expectedResponseDate": "2021-04-28",
       "isPending": true,
       "accepted": false,
-      "id": 9
+      "id": 8
+    },
+    {
+      "id": 9,
+      "magazineId": 1,
+      "storyId": 8,
+      "dateSubmitted": "2020-11-10",
+      "expectedResponseDate": "2021-01-19",
+      "isPending": false,
+      "accepted": true
     },
     {
       "magazineId": 2,
       "storyId": 11,
-      "dateSubmitted": "2020-12-14",
-      "expectedResponseDate": "2020-12-15",
+      "dateSubmitted": "2020-12-01",
+      "expectedResponseDate": "2021-01-04",
       "isPending": true,
       "accepted": false,
       "id": 10
     },
     {
+      "id": 11,
       "magazineId": 2,
       "storyId": 7,
-      "dateSubmitted": "2020-12-16",
-      "expectedResponseDate": "2020-12-31",
-      "isPending": true,
-      "accepted": false,
-      "id": 11
+      "dateSubmitted": "2020-12-17",
+      "expectedResponseDate": "2021-03-09",
+      "isPending": false,
+      "accepted": true
+    },
+    {
+      "id": 12,
+      "magazineId": 2,
+      "storyId": 9,
+      "dateSubmitted": "2020-12-03",
+      "expectedResponseDate": "2021-01-20",
+      "isPending": false,
+      "accepted": false
     }
   ],
   "notes": [
-    {
-      "storyId": 2,
-      "entry": "Drops of dragon blood could be used to gain magical abilities.",
-      "id": 1
-    },
     {
       "storyId": 4,
       "entry": "This will be a story about my high school years",
@@ -174,31 +176,6 @@
       "storyId": 4,
       "entry": "The prologue will be about brace face.",
       "id": 3
-    },
-    {
-      "storyId": 2,
-      "entry": "Dragons are big",
-      "id": 4
-    },
-    {
-      "storyId": 7,
-      "entry": "This has nothing to do with fantastic four",
-      "id": 5
-    },
-    {
-      "storyId": 8,
-      "entry": "Story about my cohort",
-      "id": 6
-    },
-    {
-      "storyId": 8,
-      "entry": "second note",
-      "id": 7
-    },
-    {
-      "id": 8,
-      "entry": "Now you work",
-      "storyId": 10
     }
   ],
   "users": [
