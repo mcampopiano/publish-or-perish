@@ -22,11 +22,11 @@
   "stories": [
     {
       "id": 1,
-      "complete": false,
-      "dailyWordGoal": 2000,
+      "userId": 1,
       "title": "Newish story",
       "totalWordGoal": 7000,
-      "userId": 1
+      "dailyWordGoal": 2000,
+      "complete": true
     },
     {
       "id": 2,
@@ -62,19 +62,19 @@
     },
     {
       "id": 9,
-      "complete": false,
-      "dailyWordGoal": 2000,
+      "userId": 1,
       "title": "Popeye",
       "totalWordGoal": 20000,
-      "userId": 1
+      "dailyWordGoal": 2000,
+      "complete": true
     },
     {
       "id": 10,
-      "complete": false,
-      "dailyWordGoal": 2,
+      "userId": 1,
       "title": "Nappy time",
       "totalWordGoal": 15,
-      "userId": 1
+      "dailyWordGoal": 2,
+      "complete": false
     },
     {
       "id": 11,

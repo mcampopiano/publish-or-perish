@@ -1,4 +1,5 @@
 .magazineSection {
+    background-color: #124559;
     border: 5px solid;
     height: 500px;
     width: 500px;
@@ -39,6 +40,7 @@
 }
 
 .pendingSubmissions, .acceptedSubmissions, .rejectedSubmissions, .magazineDetails {
+    background-color: #124559;
     border: 1px solid;
     flex: 1
 }
