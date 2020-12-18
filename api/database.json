@@ -164,6 +164,15 @@
       "expectedResponseDate": "2021-01-20",
       "isPending": false,
       "accepted": false
+    },
+    {
+      "id": 13,
+      "magazineId": 1,
+      "storyId": 11,
+      "dateSubmitted": "2020-10-17",
+      "expectedResponseDate": "2020-12-01",
+      "isPending": false,
+      "accepted": false
     }
   ],
   "notes": [
