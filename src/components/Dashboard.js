@@ -11,6 +11,13 @@ export const Dashboard = (props) => {
                 <MagazineList {...props} />
                 <StoryList {...props} />
             </div>
+                <div>
+
+                    <button onClick={() => {
+                        localStorage.clear()
+                        props.history.push("/")
+                    }}>Log out</button>
+                </div>
         </>
 
     )
