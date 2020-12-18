@@ -17,7 +17,8 @@
       "responseTime": "6 - 12 month",
       "website": "cin.com",
       "id": 2
-    }],
+    }
+  ],
   "stories": [
     {
       "id": 4,
@@ -34,14 +35,6 @@
       "totalWordGoal": 10000,
       "dailyWordGoal": 1000,
       "complete": false
-    },
-    {
-      "title": "The Coding Chronicles",
-      "dailyWordGoal": 1500,
-      "totalWordGoal": 20000,
-      "userId": 1,
-      "complete": false,
-      "id": 6
     },
     {
       "id": 7,
@@ -98,6 +91,14 @@
       "userId": 1,
       "complete": false,
       "id": 13
+    },
+    {
+      "title": "The Coding Chronicles",
+      "dailyWordGoal": 175,
+      "totalWordGoal": 25000,
+      "userId": 1,
+      "complete": false,
+      "id": 14
     }
   ],
   "submittedStories": [
@@ -172,6 +173,15 @@
       "expectedResponseDate": "2020-12-01",
       "isPending": false,
       "accepted": false
+    },
+    {
+      "magazineId": 2,
+      "storyId": 8,
+      "dateSubmitted": "2020-12-17",
+      "expectedResponseDate": "2021-05-17",
+      "isPending": true,
+      "accepted": false,
+      "id": 14
     }
   ],
   "notes": [
