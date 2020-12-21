@@ -81,6 +81,7 @@ export const StoryForm = (props) => {
                         onClick={event => {
                             event.preventDefault()
                             constructNewStory()
+                            props.history.push("/")
                         }}
                         className="btn btn-primary">Save Story</button>
                 </div>
