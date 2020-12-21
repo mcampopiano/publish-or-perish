@@ -39,7 +39,6 @@ export const MagazineForm = (props) => {
                 responseTime: magazine.responseTime,
                 website: magazine.website
             })
-            .then(() => props.history.push("/"))
         } else {
 
             addMagazine({
@@ -50,7 +49,6 @@ export const MagazineForm = (props) => {
                 responseTime: magazine.responseTime,
                 website: magazine.website
             })
-                .then(() => props.history.push("/"))
         }
       
     }
@@ -108,9 +106,9 @@ export const MagazineForm = (props) => {
                     <button type="submit"
                         onClick={event => {
                             event.preventDefault()
-                            props.history.push("/")
+                            props.history.goBack()
                         }}
-                        className="btn btn-primary">Dashboard</button>
+                        className="btn btn-primary">Cancel</button>
                 </div>
             </section>
         </form>

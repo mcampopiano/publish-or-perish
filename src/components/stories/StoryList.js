@@ -54,7 +54,7 @@ export const CompletedStoryList = (props) => {
                     })
                 }
             </section>
-            <button onClick={() => props.history.push("/")}>Dashboard</button>
+            <button onClick={() => props.history.push("/")}>Home</button>
         </div>
     )
 

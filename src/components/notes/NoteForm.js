@@ -36,14 +36,12 @@ export const NoteForm = (props) => {
                 entry: note.entry,
                 storyId: note.storyId
             })
-            .then(props.history.push("/"))
         } else {
 
             addNote({
                 storyId: parseInt(props.match.params.storyId),
                 entry: note.entry
             })
-                .then(props.history.push("/"))
         }
 
     }
@@ -66,10 +64,10 @@ export const NoteForm = (props) => {
                 </button>
                 <button type="submit" className="btn btn-primary" onClick={event => {
                     event.preventDefault()
-                    props.history.push("/")
+                    props.history.goBack()
                 }
                 }>
-                    Dashboard
+                    Cancel
                 </button>
             </section>
         </form>
