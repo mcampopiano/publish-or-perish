@@ -17,6 +17,15 @@
       "responseTime": "6 - 12 month",
       "website": "cin.com",
       "id": 2
+    },
+    {
+      "name": "Black Warrior Review",
+      "submissionDates": "Mar 1 - Sep 1",
+      "wordCount": "300 - 5000",
+      "genre": "Fantasy",
+      "responseTime": "6 - 12",
+      "website": "hi.com",
+      "id": 3
     }
   ],
   "stories": [
@@ -34,7 +43,7 @@
       "title": "Dragon Drop",
       "totalWordGoal": 10000,
       "dailyWordGoal": 1000,
-      "complete": false
+      "complete": true
     },
     {
       "id": 7,
@@ -82,23 +91,31 @@
       "title": "Frightful Fridays",
       "totalWordGoal": 20000,
       "dailyWordGoal": 2000,
-      "complete": false
+      "complete": true
     },
     {
+      "id": 13,
+      "userId": 1,
       "title": "Sick Saturdays",
-      "dailyWordGoal": 1000,
       "totalWordGoal": 15000,
-      "userId": 1,
-      "complete": false,
-      "id": 13
+      "dailyWordGoal": 1000,
+      "complete": true
     },
     {
-      "title": "The Coding Chronicles",
-      "dailyWordGoal": 175,
-      "totalWordGoal": 25000,
+      "id": 14,
       "userId": 1,
-      "complete": false,
-      "id": 14
+      "title": "The Coding Chronicles",
+      "totalWordGoal": 25000,
+      "dailyWordGoal": 175,
+      "complete": true
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "title": "Shawn goes to coris",
+      "totalWordGoal": 20000,
+      "dailyWordGoal": 2000,
+      "complete": true
     }
   ],
   "submittedStories": [
@@ -182,6 +199,24 @@
       "isPending": true,
       "accepted": false,
       "id": 14
+    },
+    {
+      "id": 15,
+      "magazineId": 1,
+      "storyId": 5,
+      "dateSubmitted": "2020-12-18",
+      "expectedResponseDate": "2021-03-18",
+      "isPending": false,
+      "accepted": false
+    },
+    {
+      "magazineId": 2,
+      "storyId": 15,
+      "dateSubmitted": "2020-12-18",
+      "expectedResponseDate": "2020-12-18",
+      "isPending": true,
+      "accepted": false,
+      "id": 16
     }
   ],
   "notes": [
@@ -194,6 +229,11 @@
       "storyId": 4,
       "entry": "The prologue will be about brace face.",
       "id": 3
+    },
+    {
+      "id": 4,
+      "entry": "Magic blah blah blah",
+      "storyId": 5
     }
   ],
   "users": [
