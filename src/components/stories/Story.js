@@ -38,7 +38,7 @@ export const Story = ({ story, history, mags, subStories }) => {
                         </Link>
                     </div>
                     <div className="btnDiv">
-                        <button onClick={() => deleteStory(story)}>Delete Story</button>
+                        <button onClick={(e) => { if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the entry with it's corresponding notes and submissions. This cannot be undone.")) deleteStory(story)}}>Delete Story</button>
                     </div>
 
                     <div className="btnDiv">
@@ -115,7 +115,7 @@ export const Story = ({ story, history, mags, subStories }) => {
                         </Link>
                     </div>
                     <div className="btnDiv">
-                        <button onClick={() => deleteStory(story)}>Delete Story</button>
+                    <button onClick={(e) => { if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the entry with it's corresponding notes and submissions. This cannot be undone.")) deleteStory(story)}}>Delete Story</button>
                     </div>
                 </section>
             </div>

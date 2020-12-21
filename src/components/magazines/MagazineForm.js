@@ -99,6 +99,7 @@ export const MagazineForm = (props) => {
                         onClick={event => {
                             event.preventDefault()
                             constructMagazine()
+                            props.history.goBack()
                         }}
                         className="btn btn-primary">Save Magazine</button>
                 </div>
