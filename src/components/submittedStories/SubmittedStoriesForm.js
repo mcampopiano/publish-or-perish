@@ -21,7 +21,6 @@ export const SubmissionForm = (props) => {
             isPending: true,
             accepted: false
         })
-        // .then(props.history.push("/"))
     }
 
     useEffect(() => {
@@ -62,7 +61,6 @@ export const SubmissionForm = (props) => {
                 <div className="formBtn">
             <Link to={{ pathname: `/magazines/${magazine.id}`, state: { chosenMagazine: magazine } }}>
                 <button  onClick={event => {
-                    // event.preventDefault()
                     constructSubmission()
                 }}>
                     Save submission
@@ -73,9 +71,9 @@ export const SubmissionForm = (props) => {
                     <button type="submit"
                         onClick={event => {
                             event.preventDefault()
-                            props.history.push("/")
+                            props.history.goBack()
                         }}
-                        className="btn btn-primary">Dashboard</button>
+                        className="btn btn-primary">Cancel</button>
                 </div>
             </section>
         </form>

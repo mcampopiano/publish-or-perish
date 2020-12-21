@@ -59,7 +59,7 @@ export const MagazineDetail = (props) => {
                     }
                 </article>
             </section>
-            <button onClick={() => props.history.push("/")}>Dashboard</button>
+            <button onClick={() => props.history.push("/")}>Home</button>
         </>
     )
 }

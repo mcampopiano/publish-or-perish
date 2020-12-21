@@ -41,7 +41,6 @@ export const StoryForm = (props) => {
                 userId: parseInt(story.userId)
 
             })
-            .then(props.history.push("/"))
         } else {
 
             addStory({
@@ -51,7 +50,6 @@ export const StoryForm = (props) => {
                 userId: parseInt(localStorage.getItem("app_user_id")),
                 complete: false
             })
-                .then(() => props.history.push("/"))
         }
     }
 
@@ -90,9 +88,9 @@ export const StoryForm = (props) => {
                     <button type="submit"
                         onClick={event => {
                             event.preventDefault()
-                            props.history.push("/")
+                            props.history.goBack()
                         }}
-                        className="btn btn-primary">Dashboard</button>
+                        className="btn btn-primary">Cancel</button>
                 </div>
             </section>
         </form>
