@@ -25,8 +25,6 @@ export const StoryList = (props) => {
                     })
                 }
             </section>
-            <button onClick={() => props.history.push("/stories/create")}>Add story</button>
-            <button onClick={() => props.history.push("/stories/complete")}>Completed Stories</button>
         </div>
     )
 
