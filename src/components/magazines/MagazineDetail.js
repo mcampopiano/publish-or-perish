@@ -21,10 +21,7 @@ export const MagazineDetail = (props) => {
                 <article className="magazineDetails">
                     {/* Since Magazine is a user-defined component functioning similarly to a DOM element in this case, I can pass information, in this case mag, which will be passed as an argument to the Magazine function. */}
                     <Magazine mag={magazine} {...props} />
-                    {/* In the below case, I am using Link instead of the onClick function because I need to pass certain information in the location.state property. */}
-                    <Link to={{ pathname: "/magazines/submissions", state: { chosenMag: magazine } }}>
-                        <button>Add submission</button>
-                    </Link>
+                    
                 </article>
                 <article className="pendingSubmissions">
                     <h2 className="pendingHeader">Pending Submissions</h2>
@@ -34,7 +31,12 @@ export const MagazineDetail = (props) => {
                                 return <StorySubmitted story={sub.story} key={sub.id} sub={sub} mag={magazine} {...props} />
                             }
                         })
+                        
                     }
+                     {/* In the below case, I am using Link instead of the onClick function because I need to pass certain information in the location.state property. */}
+                <Link to={{ pathname: "/magazines/submissions", state: { chosenMag: magazine } }}>
+                    <button>Add submission</button>
+                </Link>
                 </article>
             </section>
             <section className="acceptedRejectedDisplay">
