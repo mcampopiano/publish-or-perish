@@ -3,7 +3,7 @@ import { NoteContext } from "./NoteProvider"
 import "./notes.css"
 
 export const NoteList = (props) => {
-    const { notes, getNotes } = useContext(NoteContext)
+    const { notes, getNotes, deleteNote } = useContext(NoteContext)
     const story = props.location.state.chosenStory
 
     useEffect(() => {
@@ -24,6 +24,11 @@ export const NoteList = (props) => {
                                     <div className="btnDiv">
                                         <button onClick={() => props.history.push(`/notes/edit/${note.id}`, { chosenNote: note })}>
                                             Edit note
+                                        </button>
+                                    </div>
+                                    <div className="btnDiv">
+                                        <button onClick={() => {if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the note and cannot be undone.")) deleteNote(note)}}>
+                                            Delete note
                                         </button>
                                     </div>
                                 </article>
