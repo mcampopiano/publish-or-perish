@@ -1,0 +1,8 @@
+.notesTitle {
+    text-align: center;
+}
+
+.notes {
+    display: flex;
+    justify-content: space-around;
+}

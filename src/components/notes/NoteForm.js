@@ -58,6 +58,7 @@ export const NoteForm = (props) => {
                 <button type="submit" className="btn btn-primary" onClick={event => {
                     event.preventDefault()
                     constructNote()
+                    props.history.goBack()
                 }
                 }>
                     Save note

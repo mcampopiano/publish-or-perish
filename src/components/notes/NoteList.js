@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { NoteContext } from "./NoteProvider"
+import "./notes.css"
 
 export const NoteList = (props) => {
     const { notes, getNotes } = useContext(NoteContext)
@@ -12,7 +13,7 @@ export const NoteList = (props) => {
     return (
         <div className="noteList">
 
-            <h2>{story.title}</h2>
+            <h2 className="notesTitle">{story.title}</h2>
             <section className="notes">
                 {
                     notes.map(note => {
@@ -21,7 +22,7 @@ export const NoteList = (props) => {
                                 <article className="noteEntry" key={note.id}>
                                     <p> {note.entry} </p>
                                     <div className="btnDiv">
-                                        <button onClick={() => props.history.push(`/notes/edit/${note.id}`, {chosenNote: note} )}>
+                                        <button onClick={() => props.history.push(`/notes/edit/${note.id}`, { chosenNote: note })}>
                                             Edit note
                                         </button>
                                     </div>
@@ -31,6 +32,9 @@ export const NoteList = (props) => {
                     })
                 }
             </section>
+            <div className="btnDiv">
+                <button onClick={() => props.history.push(`/stories/notes/create/${story.id}`)}>New note</button>
+            </div>
 
         </div>
 
