@@ -32,10 +32,6 @@ export const NoteList = (props) => {
                 }
             </section>
 
-            <button className="btn btn-primary" onClick={() => props.history.push("/")}>
-                Dashboard
-            </button>
-
         </div>
 
     )

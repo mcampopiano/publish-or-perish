@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { Link } from "react-router-dom"
 import { MagazineContext } from "./MagazineProvider"
 
 // Since this component is being called by other components within <>, the arguments were passed down as objects, so I am using object deconstruction here.
@@ -12,16 +13,17 @@ export const Magazine = ({ mag, history }) => {
             <p>Preffered genre: {mag.genre}</p>
             <p>Typical response time: {mag.responseTime}</p>
             <p>Website: {mag.website}</p>
-            {/* <button onClick={() => {
-                deleteMagazine(mag)
-                history.push("/")
-            }}>Delete Magazine</button> */}
-            <button onClick={(e) => { if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the entry with it's corresponding submissions. This cannot be undone.")) {
-                deleteMagazine(mag)
-                history.push("/")}}}>Delete Magazine</button>
-            <button onClick={() => history.push(`/magazine/edit/${mag.id}`, { chosenMagazine: mag })}>
-                Edit Magazine Details
+            <section className="magButtons">
+                <button onClick={() => history.push(`/magazine/edit/${mag.id}`, { chosenMagazine: mag })}>
+                    Edit magazine details
                 </button>
+                <button onClick={(e) => {
+                    if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the entry with it's corresponding submissions. This cannot be undone.")) {
+                        deleteMagazine(mag)
+                        history.push("/")
+                    }
+                }}>Delete magazine</button>
+            </section>
 
 
         </div>

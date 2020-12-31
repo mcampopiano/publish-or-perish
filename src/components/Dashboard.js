@@ -2,6 +2,7 @@ import React from "react"
 import { MagazineList } from "./magazines/MagazineList"
 import { StoryList } from "./stories/StoryList"
 import "./Dashboard.css"
+import { NavBar } from "./NavBar"
 
 export const Dashboard = (props) => {
     return (
@@ -11,13 +12,6 @@ export const Dashboard = (props) => {
                 <MagazineList {...props} />
                 <StoryList {...props} />
             </div>
-                <div>
-
-                    <button onClick={() => {
-                        localStorage.clear()
-                        props.history.push("/")
-                    }}>Log out</button>
-                </div>
         </>
 
     )
