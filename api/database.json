@@ -108,6 +108,14 @@
       "totalWordGoal": 5000,
       "dailyWordGoal": 1000,
       "complete": true
+    },
+    {
+      "title": "Manic Monday",
+      "dailyWordGoal": 100,
+      "totalWordGoal": 1000,
+      "userId": 1,
+      "complete": false,
+      "id": 14
     }
   ],
   "submittedStories": [
@@ -287,6 +295,11 @@
       "storyId": 10,
       "entry": "This is a third note",
       "id": 17
+    },
+    {
+      "storyId": 7,
+      "entry": "Again: no fantastic four involved",
+      "id": 18
     }
   ],
   "users": [
