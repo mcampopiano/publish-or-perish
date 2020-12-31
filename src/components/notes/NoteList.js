@@ -21,16 +21,18 @@ export const NoteList = (props) => {
                             return (
                                 <article className="noteEntry" key={note.id}>
                                     <p> {note.entry} </p>
-                                    <div className="btnDiv">
-                                        <button onClick={() => props.history.push(`/notes/edit/${note.id}`, { chosenNote: note })}>
-                                            Edit note
+                                    <section className="noteBtns">
+                                        <div className="btnDiv">
+                                            <button onClick={() => props.history.push(`/notes/edit/${note.id}`, { chosenNote: note })}>
+                                                Edit note
                                         </button>
-                                    </div>
-                                    <div className="btnDiv">
-                                        <button onClick={() => {if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the note and cannot be undone.")) deleteNote(note)}}>
-                                            Delete note
+                                        </div>
+                                        <div className="btnDiv">
+                                            <button onClick={() => { if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the note and cannot be undone.")) deleteNote(note) }}>
+                                                Delete note
                                         </button>
-                                    </div>
+                                        </div>
+                                    </section>
                                 </article>
                             )
                         }
@@ -38,7 +40,7 @@ export const NoteList = (props) => {
                 }
             </section>
             <div className="btnDiv">
-                <button onClick={() => props.history.push(`/stories/notes/create/${story.id}`)}>New note</button>
+                <button className="newNote" onClick={() => props.history.push(`/stories/notes/create/${story.id}`)}>New note</button>
             </div>
 
         </div>

@@ -4,5 +4,23 @@
 
 .notes {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.noteEntry {
+    width: 250px;
+    opacity: 75%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,05);
+    border-radius: 5px;
+    top: 20%;
+    left: 40%
+}
+.noteBtns {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3px;
+}
+.newNote {
+    margin-top: 20px;
 }
