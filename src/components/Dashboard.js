@@ -8,7 +8,6 @@ export const Dashboard = (props) => {
     return (
         <>
             <h1 className="dashTitle">Publish Or Perish</h1>
-                <NavBar />
             <div className="dashboard">
                 <MagazineList {...props} />
                 <StoryList {...props} />

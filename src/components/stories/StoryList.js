@@ -25,6 +25,7 @@ export const StoryList = (props) => {
                     })
                 }
             </section>
+            <button onClick={() => props.history.push("/stories/create")}>Add story</button>
         </div>
     )
 
@@ -52,7 +53,6 @@ export const CompletedStoryList = (props) => {
                     })
                 }
             </section>
-            <button onClick={() => props.history.push("/")}>Home</button>
         </div>
     )
 

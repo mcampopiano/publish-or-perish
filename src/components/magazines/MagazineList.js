@@ -21,6 +21,10 @@ export const MagazineList = (props) => {
                     magazines.map(mag => <Link className="magLink" key={mag.id} to={{ pathname: `/magazines/${mag.id}`, state: { chosenMagazine: mag } }}>{mag.name}</Link>)
                 }
             </div>
+            {/* the onClick function takes a callback function as an argument. In this case I am passing an anonymous function so I can use the props.history.push method. the history property has value which is an array of the url's used, and the browser will display whatever is last in the array. Therefore, pushing a new url into the array will change the url in the browser. */}
+            <div className="btnDiv" id="magListBtn">
+                <button onClick={() => props.history.push("/magazines/create")}>Add magazine</button>
+            </div>
         </div>
     )
 }
