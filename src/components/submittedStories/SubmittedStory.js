@@ -46,11 +46,13 @@ export const StorySubmitted = ({ story, history, sub }) => {
                     <option value="true">Accepted</option>
                     <option value="false">Rejected</option>
                 </select>
-                <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
-                <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
-                    <button>View notes</button>
-                </Link>
-    
+                <section className="pendingBtns">
+                    <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
+                    <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
+                        <button>View notes</button>
+                    </Link>
+                </section>
+
             </div>
         )
     } else {
@@ -64,7 +66,7 @@ export const StorySubmitted = ({ story, history, sub }) => {
                 <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
                     <button>View notes</button>
                 </Link>
-        
+
             </div>
         )
     }
