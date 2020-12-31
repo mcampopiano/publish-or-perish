@@ -1,3 +1,11 @@
+.story {
+    width: 500px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,05);
+    border-radius: 5px;
+    top: 20%;
+    left: 40%;
+    margin: 10px 0px;
+}
 .storyList {
     background-color: #124559;
     border: 5px solid;
