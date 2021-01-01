@@ -110,12 +110,12 @@
       "complete": true
     },
     {
-      "title": "Manic Monday",
-      "dailyWordGoal": 100,
-      "totalWordGoal": 1000,
+      "id": 14,
       "userId": 1,
-      "complete": false,
-      "id": 14
+      "title": "Manic Monday",
+      "totalWordGoal": 1000,
+      "dailyWordGoal": 100,
+      "complete": true
     }
   ],
   "submittedStories": [

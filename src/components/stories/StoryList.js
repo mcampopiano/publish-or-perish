@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { MagazineContext } from "../magazines/MagazineProvider"
 import { SubmittedStoriesContext } from "../submittedStories/SubmittedStoriesProvider"
 import { Story } from "./Story"
@@ -35,6 +35,24 @@ export const CompletedStoryList = (props) => {
     const {magazines, getMagazines} =useContext(MagazineContext)
     const {getSubmittedStories, submittedStories} = useContext(SubmittedStoriesContext)
 
+    const [completedStories, setCompleted] = useState([])
+
+    const changeStories = (event) => {
+        if (event.target.value === "submitted") {
+            const storiesSubmitted = stories.map(story => {
+                debugger
+                if (story.userId === parseInt(localStorage.getItem("app_user_id")) && submittedStories.find(ss => ss.storyId === story.id)) {
+                    return story
+                }
+            })
+            console.log(storiesSubmitted)
+            setCompleted(storiesSubmitted)
+        }
+    }
+    useEffect(() => {
+        setCompleted(stories)
+    }, [stories])
+
     useEffect(() => {
         getMagazines().then(getSubmittedStories).then(getStories)
     }, [])
@@ -42,10 +60,15 @@ export const CompletedStoryList = (props) => {
     return (
         <div className="completedStoryList"> 
             <h2 className="completedStoryHeader">Completed Stories</h2>
+                <select defaultValue="" onChange={changeStories}>
+                    <option value="0">Test</option>
+                    <option value="submitted">submitted</option>
+                    <option value="notSubmitted">not submitted</option>
+                </select>
             <section className="completedStoryDisplay">
 
                 {
-                    stories.map(story => {
+                    completedStories.map(story => {
                         if (story.userId === parseInt(localStorage.getItem("app_user_id")) && story.complete) {
 
                             return <Story key={story.id} subStories={submittedStories} story={story} mags={magazines}{...props} />
