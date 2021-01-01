@@ -39,10 +39,13 @@ export const CompletedStoryList = (props) => {
 
     const changeStories = (event) => {
         if (event.target.value === "submitted") {
-            const storiesSubmitted = stories.map(story => {
-                debugger
-                if (story.userId === parseInt(localStorage.getItem("app_user_id")) && submittedStories.find(ss => ss.storyId === story.id)) {
-                    return story
+            const storiesSubmitted = []
+            stories.forEach(story => {
+                if (story.userId === parseInt(localStorage.getItem("app_user_id"))) {
+                    const currentStory = submittedStories.find(ss => ss.storyId === story.id)
+                    if (typeof currentStory === 'object') {
+                        storiesSubmitted.push(story)
+                    }
                 }
             })
             console.log(storiesSubmitted)
