@@ -70,11 +70,11 @@ fieldset {
     text-align: center;
 }
 
-.formButtons {
+.formButtons, .pendingBtns {
     display: flex;
     justify-content: center;
 }
-.formBtn {
+.formBtn, .submittedBtn {
     margin: 5%
 }
 

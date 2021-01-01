@@ -47,10 +47,14 @@ export const StorySubmitted = ({ story, history, sub }) => {
                     <option value="false">Rejected</option>
                 </select>
                 <section className="pendingBtns">
-                    <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
-                    <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
-                        <button>View notes</button>
-                    </Link>
+                    <div className="submittedBtn">
+                        <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
+                    </div>
+                    <div className="submittedBtn">
+                        <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
+                            <button>View notes</button>
+                        </Link>
+                    </div>
                 </section>
 
             </div>
