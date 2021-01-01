@@ -52,14 +52,49 @@ export const CompletedStoryList = (props) => {
         } else if (event.target.value === "notSubmitted") {
             const storiesNotSubmitted = []
             stories.forEach(story => {
-                const currentStory = submittedStories.find(ss => ss.storyId === story.id)
-                if (typeof currentStory === 'undefined') {
-                    storiesNotSubmitted.push(story)
+                if (story.userId === parseInt(localStorage.getItem("app_user_id"))) {
+                    const currentStory = submittedStories.find(ss => ss.storyId === story.id)
+                    if (typeof currentStory === 'undefined') {
+                        storiesNotSubmitted.push(story)
+                    }
                 }
             })
             setCompleted(storiesNotSubmitted)
         } else if (event.target.value === "all") {
             setCompleted(stories)
+        } else if (event.target.value === "pending") {
+            const pendingStories = []
+            stories.forEach(story => {
+                if (story.userId === parseInt(localStorage.getItem("app_user_id"))) {
+                    const currentStory = submittedStories.find(ss => ss.storyId === story.id && ss.isPending)
+                    if (typeof currentStory === 'object') {
+                        pendingStories.push(story)
+                    }
+                }
+            })
+            setCompleted(pendingStories)
+        } else if (event.target.value === "accepted") {
+            const acceptedStories = []
+            stories.forEach(story => {
+                if (story.userId === parseInt(localStorage.getItem("app_user_id"))) {
+                    const currentStory = submittedStories.find(ss => ss.storyId === story.id && !ss.isPending && ss.accepted)
+                    if (typeof currentStory === 'object') {
+                        acceptedStories.push(story)
+                    }
+                }
+            })
+            setCompleted(acceptedStories)
+        } else if (event.target.value === "rejected") {
+            const rejectedStories = []
+            stories.forEach(story => {
+                if (story.userId === parseInt(localStorage.getItem("app_user_id"))) {
+                    const currentStory = submittedStories.find(ss => ss.storyId === story.id && !ss.isPending && !ss.accepted)
+                    if (typeof currentStory === 'object') {
+                        rejectedStories.push(story)
+                    }
+                }
+            })
+            setCompleted(rejectedStories)
         }
     }
     useEffect(() => {
@@ -78,6 +113,9 @@ export const CompletedStoryList = (props) => {
                 <option value="all">Display all</option>
                 <option value="submitted">Submitted</option>
                 <option value="notSubmitted">Not submitted</option>
+                <option value="pending">Pending</option>
+                <option value="accepted">Accepted</option>
+                <option value="rejected">Rejected</option>
             </select>
             <section className="completedStoryDisplay">
 
