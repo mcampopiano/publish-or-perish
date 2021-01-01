@@ -6,10 +6,10 @@ import { StoryContext } from "./StoryProvider"
 
 export const StoryList = (props) => {
     const { stories, getStories } = useContext(StoryContext)
-    
+
 
     useEffect(() => {
-       getStories()
+        getStories()
     }, [])
 
     return (
@@ -32,8 +32,8 @@ export const StoryList = (props) => {
 }
 export const CompletedStoryList = (props) => {
     const { stories, getStories } = useContext(StoryContext)
-    const {magazines, getMagazines} =useContext(MagazineContext)
-    const {getSubmittedStories, submittedStories} = useContext(SubmittedStoriesContext)
+    const { magazines, getMagazines } = useContext(MagazineContext)
+    const { getSubmittedStories, submittedStories } = useContext(SubmittedStoriesContext)
 
     const [completedStories, setCompleted] = useState([])
 
@@ -48,8 +48,18 @@ export const CompletedStoryList = (props) => {
                     }
                 }
             })
-            console.log(storiesSubmitted)
             setCompleted(storiesSubmitted)
+        } else if (event.target.value === "notSubmitted") {
+            const storiesNotSubmitted = []
+            stories.forEach(story => {
+                const currentStory = submittedStories.find(ss => ss.storyId === story.id)
+                if (typeof currentStory === 'undefined') {
+                    storiesNotSubmitted.push(story)
+                }
+            })
+            setCompleted(storiesNotSubmitted)
+        } else if (event.target.value === "all") {
+            setCompleted(stories)
         }
     }
     useEffect(() => {
@@ -61,13 +71,14 @@ export const CompletedStoryList = (props) => {
     }, [])
 
     return (
-        <div className="completedStoryList"> 
+        <div className="completedStoryList">
             <h2 className="completedStoryHeader">Completed Stories</h2>
-                <select defaultValue="" onChange={changeStories}>
-                    <option value="0">Test</option>
-                    <option value="submitted">submitted</option>
-                    <option value="notSubmitted">not submitted</option>
-                </select>
+            <select defaultValue="" onChange={changeStories}>
+                <option value="0">Filter</option>
+                <option value="all">Display all</option>
+                <option value="submitted">Submitted</option>
+                <option value="notSubmitted">Not submitted</option>
+            </select>
             <section className="completedStoryDisplay">
 
                 {
