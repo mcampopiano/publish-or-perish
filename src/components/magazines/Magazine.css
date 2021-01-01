@@ -59,5 +59,11 @@
 }
 
 .magButtons {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.magBtn {
+    margin: 5%
 }

@@ -70,12 +70,12 @@ fieldset {
     text-align: center;
 }
 
-.formButtons {
+.formButtons, .storyBtns {
     display: flex;
     justify-content: center;
 }
-.formBtn {
-    margin: 5%
+.formBtn, .storyBtn {
+    margin: 0 5%
 }
 
 .Submissions {

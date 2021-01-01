@@ -28,24 +28,24 @@ export const Story = ({ story, history, mags, subStories }) => {
                 <input type="checkbox" ref={complete} onChange={storyComplete} />
                 <p>Total word count goal: {story.totalWordGoal}</p>
                 <p>Daily word count goal: {story.dailyWordGoal}</p>
-                <section className="storyButtons">
-                    <div className="btnDiv">
+                <section className="storyBtns">
+                    <div className="storyBtn">
                         <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
                     </div>
-                    <div className="btnDiv">
+                    <div className="storyBtn">
                         <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
                             <button>View notes</button>
                         </Link>
                     </div>
-                    <div className="btnDiv">
-                        <button onClick={(e) => { if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the entry with it's corresponding notes and submissions. This cannot be undone.")) deleteStory(story)}}>Delete Story</button>
-                    </div>
-
-                    <div className="btnDiv">
+                    <div className="storyBtn">
                         <Link to={{ pathname: `stories/edit/${story.id}`, state: { chosenStory: story } }}>
                             <button>Edit</button>
                         </Link>
                     </div>
+                    <div className="storyBtn">
+                        <button onClick={(e) => { if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the entry with it's corresponding notes and submissions. This cannot be undone.")) deleteStory(story) }}>Delete Story</button>
+                    </div>
+
                 </section>
 
             </div>
@@ -105,17 +105,17 @@ export const Story = ({ story, history, mags, subStories }) => {
                         }
                     </section>
                 </section>
-                <section className="storyButtons">
-                    <div className="btnDiv">
+                <section className="storyBtns">
+                    <div className="storyBtn">
                         <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
                     </div>
-                    <div className="btnDiv">
+                    <div className="storyBtn">
                         <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
                             <button>View notes</button>
                         </Link>
                     </div>
-                    <div className="btnDiv">
-                    <button onClick={(e) => { if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the entry with it's corresponding notes and submissions. This cannot be undone.")) deleteStory(story)}}>Delete Story</button>
+                    <div className="storyBtn">
+                        <button onClick={(e) => { if (window.confirm("Are you sure you want to delete? Doing so will permanently remove the entry with it's corresponding notes and submissions. This cannot be undone.")) deleteStory(story) }}>Delete Story</button>
                     </div>
                 </section>
             </div>

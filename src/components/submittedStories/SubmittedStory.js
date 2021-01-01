@@ -46,11 +46,15 @@ export const StorySubmitted = ({ story, history, sub }) => {
                     <option value="true">Accepted</option>
                     <option value="false">Rejected</option>
                 </select>
-                <section className="pendingBtns">
-                    <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
-                    <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
-                        <button>View notes</button>
-                    </Link>
+                <section className="storyBtns">
+                    <div className="storyBtn">
+                        <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
+                    </div>
+                    <div className="storyBtn">
+                        <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
+                            <button>View notes</button>
+                        </Link>
+                    </div>
                 </section>
 
             </div>
@@ -62,11 +66,16 @@ export const StorySubmitted = ({ story, history, sub }) => {
                 <h3 className="storyCardTitle">{story.title}</h3>
                 <p>Total word count goal: {story.totalWordGoal}</p>
                 <p>Daily word count goal: {story.dailyWordGoal}</p>
-                <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
-                <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
-                    <button>View notes</button>
-                </Link>
-
+                <section className="storyBtns">
+                    <div className="storyBtn">
+                        <button onClick={() => history.push(`/stories/notes/create/${story.id}`)}>Add note</button>
+                    </div>
+                    <div className="storyBtn">
+                        <Link to={{ pathname: `/stories/notes/${story.id}`, state: { chosenStory: story } }}>
+                            <button>View notes</button>
+                        </Link>
+                    </div>
+                </section>
             </div>
         )
     }
