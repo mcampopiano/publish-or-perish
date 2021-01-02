@@ -123,6 +123,7 @@ export const CompletedStoryList = (props) => {
     return (
         <div className="completedStoryList">
             <h2 className="completedStoryHeader">Completed Stories</h2>
+            <div className="filterBar">
             <select defaultValue="" onChange={changeStories}>
                 <option value="all">Display all</option>
                 <option value="submitted">Submitted</option>
@@ -132,6 +133,7 @@ export const CompletedStoryList = (props) => {
                 <option value="rejected">Rejected</option>
             </select>
             <input type="text" onKeyUp={event => setSearchTerms(event.target.value)} placeholder="Search for a story by title" />
+            </div>
             <section className="completedStoryDisplay">
 
                 {
