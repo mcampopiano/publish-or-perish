@@ -35,14 +35,18 @@ export const CompletedStoryList = (props) => {
     const { magazines, getMagazines } = useContext(MagazineContext)
     const { getSubmittedStories, submittedStories } = useContext(SubmittedStoriesContext)
 
+    // This state will be used to determine which story cards are displayed to the DOM
     const [completedStories, setCompleted] = useState([])
 
+    // When this function is called, it will modify the state of completedStories based on what has been selected in the dropdown menu
     const changeStories = (event) => {
         if (event.target.value === "submitted") {
             const storiesSubmitted = []
             stories.forEach(story => {
                 if (story.userId === parseInt(localStorage.getItem("app_user_id"))) {
+                    // I iterate through the submittedStories join table, to see if at least one of those relates to the current story, which would indicate that said story has been submttied.
                     const currentStory = submittedStories.find(ss => ss.storyId === story.id)
+                    // I have to use typeof here to ensure that nothing that is undefined gets pushed into the new array
                     if (typeof currentStory === 'object') {
                         storiesSubmitted.push(story)
                     }
@@ -54,6 +58,7 @@ export const CompletedStoryList = (props) => {
             stories.forEach(story => {
                 if (story.userId === parseInt(localStorage.getItem("app_user_id"))) {
                     const currentStory = submittedStories.find(ss => ss.storyId === story.id)
+                    // This conditional works very similarly to the one above for submitted stories, however in this case, if the .find method returns undefined, it indicates that the current story from the .forEach method does not have a corresponding join table resource and therefore has not been submitted.
                     if (typeof currentStory === 'undefined') {
                         storiesNotSubmitted.push(story)
                     }
@@ -97,6 +102,7 @@ export const CompletedStoryList = (props) => {
             setCompleted(rejectedStories)
         }
     }
+    // Setting completedStories to stories in this uesEffect ensures that the user will first be provided with a list of all of their completed stories.
     useEffect(() => {
         setCompleted(stories)
     }, [stories])
@@ -109,7 +115,6 @@ export const CompletedStoryList = (props) => {
         <div className="completedStoryList">
             <h2 className="completedStoryHeader">Completed Stories</h2>
             <select defaultValue="" onChange={changeStories}>
-                <option value="0">Filter</option>
                 <option value="all">Display all</option>
                 <option value="submitted">Submitted</option>
                 <option value="notSubmitted">Not submitted</option>
