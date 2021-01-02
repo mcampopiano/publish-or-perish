@@ -31,7 +31,7 @@ export const StoryList = (props) => {
 
 }
 export const CompletedStoryList = (props) => {
-    const { stories, getStories } = useContext(StoryContext)
+    const { stories, getStories, searchTerms, setSearchTerms } = useContext(StoryContext)
     const { magazines, getMagazines } = useContext(MagazineContext)
     const { getSubmittedStories, submittedStories } = useContext(SubmittedStoriesContext)
 
@@ -102,6 +102,15 @@ export const CompletedStoryList = (props) => {
             setCompleted(rejectedStories)
         }
     }
+
+    useEffect(() => {
+        if (searchTerms !== "") {
+            const subset = stories.filter(story => story.title.toLowerCase().includes(searchTerms.toLowerCase()))
+            setCompleted(subset)
+        } else {
+            setCompleted(stories)
+        }
+    }, [searchTerms])
     // Setting completedStories to stories in this uesEffect ensures that the user will first be provided with a list of all of their completed stories.
     useEffect(() => {
         setCompleted(stories)
@@ -122,6 +131,7 @@ export const CompletedStoryList = (props) => {
                 <option value="accepted">Accepted</option>
                 <option value="rejected">Rejected</option>
             </select>
+            <input type="text" onKeyUp={event => setSearchTerms(event.target.value)} placeholder="Search for a story by title" />
             <section className="completedStoryDisplay">
 
                 {
