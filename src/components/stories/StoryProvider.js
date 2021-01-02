@@ -4,6 +4,8 @@ export const StoryContext = React.createContext()
 
 export const StoryProvider = (props) => {
     const [stories, setStories] = useState([])
+    // Search terms will be used for the search bar in completed stories view
+    const [searchTerms, setSearchTerms] = useState("")
 
     const getStories = () => {
         return fetch("http://localhost:8088/stories")
@@ -41,7 +43,7 @@ export const StoryProvider = (props) => {
     }
 
     return (
-        <StoryContext.Provider value={{stories, setStories, getStories, addStory, editStory, deleteStory}}>
+        <StoryContext.Provider value={{stories, setStories, getStories, addStory, editStory, deleteStory, searchTerms, setSearchTerms}}>
             {props.children}
         </StoryContext.Provider>
     )
