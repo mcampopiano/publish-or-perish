@@ -83,3 +83,8 @@ fieldset {
     overflow-x: hidden;
     max-height: 180px;
 }
+
+.filterBar {
+    display: flex;
+    justify-content: space-between;
+}
