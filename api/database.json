@@ -17,15 +17,6 @@
       "responseTime": "6 - 12 month",
       "website": "cin.com",
       "id": 2
-    },
-    {
-      "name": "Scotland Today",
-      "submissionDates": "Oct 18-MARCH 29",
-      "wordCount": "1000-5000",
-      "genre": "Historical Fiction",
-      "responseTime": "1-2 WEEKS",
-      "website": "www.scotlandtodsy.com",
-      "id": 3
     }
   ],
   "stories": [
@@ -116,6 +107,46 @@
       "totalWordGoal": 1000,
       "dailyWordGoal": 100,
       "complete": true
+    },
+    {
+      "title": "The Scranton Strangler",
+      "dailyWordGoal": 2000,
+      "totalWordGoal": 20000,
+      "userId": 5,
+      "complete": false,
+      "id": 15
+    },
+    {
+      "id": 16,
+      "userId": 5,
+      "title": "The Ballad of lil Sebastian",
+      "totalWordGoal": 10000,
+      "dailyWordGoal": 1000,
+      "complete": true
+    },
+    {
+      "id": 17,
+      "userId": 5,
+      "title": "How I burned $250,000 (literally)",
+      "totalWordGoal": 5000,
+      "dailyWordGoal": 1000,
+      "complete": true
+    },
+    {
+      "id": 18,
+      "userId": 5,
+      "title": "The bank robbery",
+      "totalWordGoal": 15000,
+      "dailyWordGoal": 1000,
+      "complete": true
+    },
+    {
+      "id": 19,
+      "userId": 5,
+      "title": "The Pineapple",
+      "totalWordGoal": 10000,
+      "dailyWordGoal": 1000,
+      "complete": true
     }
   ],
   "submittedStories": [
@@ -190,15 +221,6 @@
       "isPending": true,
       "accepted": false,
       "id": 11
-    },
-    {
-      "id": 12,
-      "magazineId": 3,
-      "storyId": 12,
-      "dateSubmitted": "2020-12-21",
-      "expectedResponseDate": "2021-01-11",
-      "isPending": false,
-      "accepted": false
     },
     {
       "magazineId": 1,
@@ -300,6 +322,26 @@
       "storyId": 7,
       "entry": "Again: no fantastic four involved",
       "id": 18
+    },
+    {
+      "storyId": 15,
+      "entry": "It could be Toby, but it could also not be Toby...",
+      "id": 19
+    },
+    {
+      "storyId": 16,
+      "entry": "You're 10,000 candles in the wind",
+      "id": 20
+    },
+    {
+      "storyId": 16,
+      "entry": "In the end, Ben will finally understand.",
+      "id": 21
+    },
+    {
+      "storyId": 17,
+      "entry": "There's always money in the banana stand",
+      "id": 22
     }
   ],
   "users": [
@@ -326,6 +368,12 @@
       "password": "1020",
       "name": "Claire Fraser",
       "id": 4
+    },
+    {
+      "email": "demo@demo.com",
+      "password": "demo",
+      "name": "Mario Demo",
+      "id": 5
     }
   ]
 }
