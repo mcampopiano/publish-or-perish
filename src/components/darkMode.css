@@ -1,0 +1,8 @@
+.dark {
+    background-color: #121212;
+    color: white;
+}
+
+.dark .storyList, .dark .magazineSection, .dark .magazineDetails, .dark .pendingSubmissions, .dark .acceptedSubmissions, .dark .rejectedSubmissions, .dark .completed {
+    background-color: #1d1d1d;
+}
