@@ -6,7 +6,7 @@ import { Register } from "./components/auth/Register"
 import { NavBar } from "./components/NavBar"
 import "./components/darkMode.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faMoon } from '@fortawesome/free-solid-svg-icons'
 import "./components/Dashboard.css"
 
 

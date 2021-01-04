@@ -8,11 +8,16 @@ import { StoryContext } from "./StoryProvider"
 
 export const StoryList = (props) => {
     const { stories, getStories } = useContext(StoryContext)
+    const [allStories, setAllStories] = useState([])
 
 
     useEffect(() => {
         getStories()
     }, [])
+
+    useEffect(() => {
+        setAllStories(stories)
+    }, [stories])
 
     return (
         <div className="storyList">
@@ -20,7 +25,7 @@ export const StoryList = (props) => {
             <section className="storyCardDisplay">
 
                 {
-                    stories.map(story => {
+                    allStories.map(story => {
                         if (story.userId === parseInt(localStorage.getItem("app_user_id")) && !story.complete) {
                             return <Story key={story.id} story={story} {...props} />
                         }
