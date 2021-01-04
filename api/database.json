@@ -370,7 +370,7 @@
     },
     {
       "id": 19,
-      "entry": "It could be Toby...",
+      "entry": "It's def Toby",
       "storyId": 15
     },
     {
@@ -387,6 +387,11 @@
       "storyId": 17,
       "entry": "There's always money in the banana stand",
       "id": 22
+    },
+    {
+      "storyId": 15,
+      "entry": "Hell drive by the office",
+      "id": 23
     }
   ],
   "users": [
