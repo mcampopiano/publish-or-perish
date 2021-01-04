@@ -230,6 +230,51 @@
       "isPending": true,
       "accepted": false,
       "id": 13
+    },
+    {
+      "id": 14,
+      "magazineId": 1,
+      "storyId": 16,
+      "dateSubmitted": "2020-12-14",
+      "expectedResponseDate": "2021-01-03",
+      "isPending": false,
+      "accepted": true
+    },
+    {
+      "id": 15,
+      "magazineId": 1,
+      "storyId": 18,
+      "dateSubmitted": "2020-09-29",
+      "expectedResponseDate": "2020-11-10",
+      "isPending": false,
+      "accepted": false
+    },
+    {
+      "id": 16,
+      "magazineId": 1,
+      "storyId": 17,
+      "dateSubmitted": "2020-04-27",
+      "expectedResponseDate": "2020-07-07",
+      "isPending": false,
+      "accepted": false
+    },
+    {
+      "magazineId": 2,
+      "storyId": 17,
+      "dateSubmitted": "2021-01-04",
+      "expectedResponseDate": "2021-01-05",
+      "isPending": true,
+      "accepted": false,
+      "id": 17
+    },
+    {
+      "id": 18,
+      "magazineId": 2,
+      "storyId": 18,
+      "dateSubmitted": "2020-12-07",
+      "expectedResponseDate": "2021-01-03",
+      "isPending": false,
+      "accepted": true
     }
   ],
   "notes": [
@@ -324,9 +369,9 @@
       "id": 18
     },
     {
-      "storyId": 15,
-      "entry": "It could be Toby, but it could also not be Toby...",
-      "id": 19
+      "id": 19,
+      "entry": "It could be Toby...",
+      "storyId": 15
     },
     {
       "storyId": 16,
