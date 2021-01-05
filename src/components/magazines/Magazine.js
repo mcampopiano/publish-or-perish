@@ -8,8 +8,8 @@ export const Magazine = ({ mag, history }) => {
         <div className="magazineCard">
             <h2 className="magCardTitle">Publication Details</h2>
             <p>Open submission dates: {mag.submissionDates}</p>
-            <p>Word count requriements: {mag.wordCount}</p>
-            <p>Preffered genre: {mag.genre}</p>
+            <p>Word count requirements: {mag.wordCount}</p>
+            <p>Preferred genre: {mag.genre}</p>
             <p>Typical response time: {mag.responseTime}</p>
             <p>Website: {mag.website}</p>
             <section className="magButtons">
