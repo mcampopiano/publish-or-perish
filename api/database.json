@@ -147,6 +147,14 @@
       "totalWordGoal": 10000,
       "dailyWordGoal": 1000,
       "complete": true
+    },
+    {
+      "id": 20,
+      "complete": false,
+      "dailyWordGoal": 2000,
+      "title": "Demo Day",
+      "totalWordGoal": 30000,
+      "userId": 5
     }
   ],
   "submittedStories": [
@@ -275,6 +283,15 @@
       "expectedResponseDate": "2021-01-03",
       "isPending": false,
       "accepted": true
+    },
+    {
+      "id": 19,
+      "magazineId": 1,
+      "storyId": 20,
+      "dateSubmitted": "2021-01-04",
+      "expectedResponseDate": "2021-04-05",
+      "isPending": false,
+      "accepted": true
     }
   ],
   "notes": [
@@ -389,9 +406,14 @@
       "id": 22
     },
     {
+      "id": 23,
+      "entry": "He'll drive by the office",
+      "storyId": 15
+    },
+    {
       "storyId": 15,
-      "entry": "Hell drive by the office",
-      "id": 23
+      "entry": "He'll be caught",
+      "id": 24
     }
   ],
   "users": [
