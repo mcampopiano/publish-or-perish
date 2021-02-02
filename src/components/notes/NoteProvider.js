@@ -6,13 +6,13 @@ export const NoteProvider = (props) => {
     const [notes, setNotes] = useState([])
 
     const getNotes = () => {
-        return fetch("http://localhost:8088/notes")
+        return fetch("https://publish-or-perish-api.herokuapp.com/notes")
         .then(r => r.json())
         .then(setNotes)
     }
 
     const addNote = note => {
-        return fetch("http://localhost:8088/notes", {
+        return fetch("https://publish-or-perish-api.herokuapp.com/notes", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -23,7 +23,7 @@ export const NoteProvider = (props) => {
     }
 
     const editNote = note => {
-        return fetch(`http://localhost:8088/notes/${note.id}`, {
+        return fetch(`https://publish-or-perish-api.herokuapp.com/notes/${note.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -34,7 +34,7 @@ export const NoteProvider = (props) => {
     }
 
     const deleteNote = note => {
-        return fetch(`http://localhost:8088/notes/${note.id}`, {
+        return fetch(`https://publish-or-perish-api.herokuapp.com/notes/${note.id}`, {
             method: "DELETE"
         }).then(getNotes)
     }

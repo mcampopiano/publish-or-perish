@@ -8,13 +8,13 @@ export const StoryProvider = (props) => {
     const [searchTerms, setSearchTerms] = useState("")
 
     const getStories = () => {
-        return fetch("http://localhost:8088/stories")
+        return fetch("https://publish-or-perish-api.herokuapp.com/stories")
         .then(r => r.json())
         .then(setStories)
     }
 
     const addStory = story => {
-        return fetch("http://localhost:8088/stories", {
+        return fetch("https://publish-or-perish-api.herokuapp.com/stories", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -25,7 +25,7 @@ export const StoryProvider = (props) => {
     }
 
     const editStory = story => {
-        return fetch(`http://localhost:8088/stories/${story.id}`, {
+        return fetch(`https://publish-or-perish-api.herokuapp.com/stories/${story.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -36,7 +36,7 @@ export const StoryProvider = (props) => {
     }
 
     const deleteStory = story => {
-        return fetch(`http://localhost:8088/stories/${story.id}`, {
+        return fetch(`https://publish-or-perish-api.herokuapp.com/stories/${story.id}`, {
             method: "DELETE"
         })
         .then(getStories)

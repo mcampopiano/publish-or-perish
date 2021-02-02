@@ -8,14 +8,14 @@ export const MagazineProvider = (props) => {
     const [magazines, setMagazines] = useState([])
 
     const getMagazines = () => {
-        return fetch("http://localhost:8088/magazines")
+        return fetch("https://publish-or-perish-api.herokuapp.com/magazines")
         .then(r => r.json())
         // since .then takes a callback function as an argument, I don't have to use the () to call setMagazines, and this will automatically pass the data returned from the previous .then as an argument.
         .then(setMagazines)
     }
 
     const addMagazine = (magazine) => {
-        return fetch("http://localhost:8088/magazines", {
+        return fetch("https://publish-or-perish-api.herokuapp.com/magazines", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,19 +26,19 @@ export const MagazineProvider = (props) => {
     }
 
     const deleteMagazine = (magazine) => {
-        return fetch(`http://localhost:8088/magazines/${magazine.id}`, {
+        return fetch(`https://publish-or-perish-api.herokuapp.com/magazines/${magazine.id}`, {
             method: "DELETE"
         })
         .then(getMagazines)
     }
 
     const getMagById = id => {
-        return fetch(`http://localhost:8088/magazines/${id}`)
+        return fetch(`https://publish-or-perish-api.herokuapp.com/magazines/${id}`)
         .then(r => r.json())
     }
 
     const editMagazine = magazine => {
-        return fetch(`http://localhost:8088/magazines/${magazine.id}`, {
+        return fetch(`https://publish-or-perish-api.herokuapp.com/magazines/${magazine.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
